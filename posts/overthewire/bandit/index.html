@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  Bandit Walkthroughs · CyS3cGuy
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="CyS3cGuy">
+<meta name="description" content="A beginner friendly wargame to learn basic Linux command-line skills.">
+<meta name="keywords" content="blog,cybersecurity,ctf,IT">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Bandit Walkthroughs">
+  <meta name="twitter:description" content="A beginner friendly wargame to learn basic Linux command-line skills.">
+
+<meta property="og:url" content="http://localhost:1313/posts/overthewire/bandit/">
+  <meta property="og:site_name" content="CyS3cGuy">
+  <meta property="og:title" content="Bandit Walkthroughs">
+  <meta property="og:description" content="A beginner friendly wargame to learn basic Linux command-line skills.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/posts/overthewire/bandit/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link rel="alternate" type="application/rss+xml" href="/posts/overthewire/bandit/index.xml" title="CyS3cGuy" />
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-dark">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      CyS3cGuy
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/">Home</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/glossary/">Glossary</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Browse Contents</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container list">
+    <nav aria-label="breadcrumb">
+    <ol style="padding: 0;">
+        
+        <li style="display: inline;">
+            <a href="/">Home</a>
+        </li>
+        <li style="display: inline">>></li>
+        
+        <li style="display: inline;">
+            <a href="/posts/">All Contents</a>
+        </li>
+        <li style="display: inline">>></li>
+        
+        <li style="display: inline;">
+            <a href="/posts/overthewire/">OverTheWire</a>
+        </li>
+        <li style="display: inline">>></li>
+        
+        <li class="active" style="display: inline; color: grey">
+            Bandit Walkthroughs
+        </li>
+    </ol>
+</nav>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="http://localhost:1313/posts/overthewire/bandit/">
+          Bandit Walkthroughs
+        </a>
+      </h1>
+    </header>
+    <p><strong>Difficulty scale:</strong>   
+
+
+
+
+
+<img width="2%" src="/svg/star-solid.svg"></img>
+
+
+
+<img width="2%" src="/svg/star-border.svg"></img>
+
+<img width="2%" src="/svg/star-border.svg"></img>
+
+<img width="2%" src="/svg/star-border.svg"></img>
+
+<img width="2%" src="/svg/star-border.svg"></img>
+
+<img width="2%" src="/svg/star-border.svg"></img>
+
+<img width="2%" src="/svg/star-border.svg"></img>
+
+<img width="2%" src="/svg/star-border.svg"></img>
+
+<img width="2%" src="/svg/star-border.svg"></img>
+
+<img width="2%" src="/svg/star-border.svg"></img>
+</p>
+<p>This wargame is beginner friendly and focuses on basic Linux command-line skills and is a great starting point for beginners.</p>
+<p>Each level can be accessed via Secure Shell (SSH) to the corresponding terminal. To SSH, fire up Terminal (Unix) or Command Prompt (Windows). Type in the command <code>ssh bandit&lt;level&gt;@bandit.labs.overthewire.org -p 2220</code>. Then input the password/flag obtained when prompted.</p>
+<p>For example, to access Bandit Level 3, use <code>ssh bandit3@bandit.labs.overthewire.org -p 2220</code>.</p>
+<blockquote>
+<p><strong>Note:</strong> You are highly recommended to view the provided information in each level page at <a href="https://overthewire.org/wargames/bandit/"  class="external-link" target="_blank" rel="noopener">Bandit OTW</a> before starting each level.</p>
+</blockquote>
+<blockquote>
+<p><strong>Disclaimer:</strong> The login password is rotated on a regular basis. Although the login password in this site may not be relevant anymore, the process to get the next level login password will STILL be relevant. So don&rsquo;t cheat your way by using the password straight without trying out first!</p>
+</blockquote>
+<p><strong>Glossary friendly:</strong> <a href="/glossary#ssh" >SSH</a>, <a href="/glossary#terminal" >Terminal</a></p>
+<hr>
+<h1 id="writeup">
+  Writeup
+  <a class="heading-link" href="#writeup">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+
+    
+    
+    
+    
+
+    <ul><li>
+  <span class="date">August 8, 2024</span>
+  <a class="title" href="/posts/overthewire/bandit/bandit-1/">Bandit 0 - 1 Walkthrough</a>
+</li>
+<li>
+  <span class="date">August 9, 2024</span>
+  <a class="title" href="/posts/overthewire/bandit/bandit-2/">Bandit 1 - 2 Walkthrough</a>
+</li>
+<li>
+  <span class="date">August 9, 2024</span>
+  <a class="title" href="/posts/overthewire/bandit/bandit-3/">Bandit 2 - 3 Walkthrough</a>
+</li>
+<li>
+  <span class="date">August 10, 2024</span>
+  <a class="title" href="/posts/overthewire/bandit/bandit-4/">Bandit 3 - 4 Walkthrough</a>
+</li>
+</ul>
+
+    
+    
+    
+
+    
+
+    
+
+
+
+
+
+
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  </section>
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2024
+     CyS3cGuy 
+    
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+  
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

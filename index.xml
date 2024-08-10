@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on CyS3cGuy</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Home on CyS3cGuy</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 10 Aug 2024 15:38:02 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bandit 0 - 1 Walkthrough</title>
+      <link>http://localhost:1313/posts/overthewire/bandit/bandit-1/</link>
+      <pubDate>Thu, 08 Aug 2024 11:35:04 +0800</pubDate>
+      <guid>http://localhost:1313/posts/overthewire/bandit/bandit-1/</guid>
+      <description>Before you start&#xD;Link to heading&#xD;SSH command:&#xA;ssh bandit0@bandit.labs.overthewire.org -p 2220 Login password for Bandit Level 0:&#xA;bandit0&#xA;Solution / Commands&#xD;Link to heading&#xD;Bash&#xA;bandit0@bandit:~$ ls bandit0@bandit:~$ cat readme Process Breakdown&#xD;Link to heading&#xD;Step 1&#xD;Link to heading&#xD;ls Once login, we need to first find out what files is in the directory. ls command lists out all the non-hidden files in a directory. We see that only readme exists.</description>
+    </item>
+    <item>
+      <title>Bandit 1 - 2 Walkthrough</title>
+      <link>http://localhost:1313/posts/overthewire/bandit/bandit-2/</link>
+      <pubDate>Fri, 09 Aug 2024 17:46:33 +0800</pubDate>
+      <guid>http://localhost:1313/posts/overthewire/bandit/bandit-2/</guid>
+      <description>Before you start&#xD;Link to heading&#xD;SSH command:&#xA;ssh bandit1@bandit.labs.overthewire.org -p 2220 Login password for Bandit Level 1:&#xA;ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If&#xD;Solution / Commands&#xD;Link to heading&#xD;Bash&#xA;bandit1@bandit:~$ ls bandit1@bandit:~$ cat ./- Process Breakdown&#xD;Link to heading&#xD;Step 1&#xD;Link to heading&#xD;ls Once login, we need to first find out what files is in the directory. ls command shows that only - file exists.&#xA;Step 2&#xD;Link to heading&#xD;cat .</description>
+    </item>
+    <item>
+      <title>Bandit 2 - 3 Walkthrough</title>
+      <link>http://localhost:1313/posts/overthewire/bandit/bandit-3/</link>
+      <pubDate>Fri, 09 Aug 2024 17:46:34 +0800</pubDate>
+      <guid>http://localhost:1313/posts/overthewire/bandit/bandit-3/</guid>
+      <description>Before you start&#xD;Link to heading&#xD;SSH command:&#xA;ssh bandit2@bandit.labs.overthewire.org -p 2220 Login password for Bandit Level 2:&#xA;263JGJPfgU6LtdEvgfWU1XP5yac29mFx&#xD;Solution / Commands&#xD;Link to heading&#xD;Bash&#xA;bandit2@bandit:~$ ls bandit2@bandit:~$ cat spaces\ in\ this\ filename Process Breakdown&#xD;Link to heading&#xD;Step 1&#xD;Link to heading&#xD;ls Once login, we need to first find out what files is in the directory. ls command shows that only &amp;ldquo;spaces in this filename&amp;rdquo; file exists.</description>
+    </item>
+    <item>
+      <title>Bandit 3 - 4 Walkthrough</title>
+      <link>http://localhost:1313/posts/overthewire/bandit/bandit-4/</link>
+      <pubDate>Sat, 10 Aug 2024 15:38:02 +0800</pubDate>
+      <guid>http://localhost:1313/posts/overthewire/bandit/bandit-4/</guid>
+      <description>Before you start&#xD;Link to heading&#xD;SSH command:&#xA;ssh bandit3@bandit.labs.overthewire.org -p 2220 Login password for Bandit Level 3:&#xA;MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx&#xD;Solution / Commands&#xD;Link to heading&#xD;Bash&#xA;bandit3@bandit:~$ ls bandit3@bandit:~$ cd inhere bandit3@bandit:~$ ls -la bandit3@bandit:~$ cat ...Hiding-From-You Process Breakdown&#xD;Link to heading&#xD;Step 1&#xD;Link to heading&#xD;ls Once login, we need to first find out what files is in the directory. ls command shows that only &amp;ldquo;inhere&amp;rdquo; directory exists.</description>
+    </item>
+    <item>
+      <title>Glossary</title>
+      <link>http://localhost:1313/glossary/</link>
+      <pubDate>Sat, 10 Aug 2024 00:29:43 +0800</pubDate>
+      <guid>http://localhost:1313/glossary/</guid>
+      <description>Feeling lost with the jargons? Glossary is here to help!</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Thu, 08 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>ABOUT CYS3CGUY&#xD;Link to heading&#xD;CyS3cGuy is a blogging site created by Naidamair to share articles, opinions, and walkthroughs. The site’s name is derived from &amp;ldquo;Cyber Security Guy&amp;rdquo; and it was founded in 2024. Its primary focus is on IT and Cyber Security topics.&#xA;You can find walkthroughs at this site. The main differentiator between the walkthroughs in this site and the other sites is that this site tends to be more verbose than others as the author strives to provide in-depth analysis and thought process that gradually unravel the solution, rather than providing the solution directly.</description>
+    </item>
+  </channel>
+</rss>

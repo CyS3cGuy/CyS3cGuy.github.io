@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Glossary on CyS3cGuy</title>
+    <link>http://localhost:1313/glossary/</link>
+    <description>Recent content in Glossary on CyS3cGuy</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 10 Aug 2024 02:54:20 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/glossary/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Escape Character</title>
+      <link>http://localhost:1313/glossary/escape-character/</link>
+      <pubDate>Sat, 10 Aug 2024 02:54:20 +0800</pubDate>
+      <guid>http://localhost:1313/glossary/escape-character/</guid>
+      <description>Escaping a character means adding a special prefix (often a backslash ) before a character to indicate that it should be treated differently than it normally would be in a given context, such as in a string, a regular expression, in URL, or in HTML.&#xA;For example, in URL, &amp;ldquo;%&amp;rdquo; is treated as a special character, because if the URL has &amp;ldquo;%&amp;rdquo;, it will do an operation called URL encoding. Examples of URL encoding:</description>
+    </item>
+    <item>
+      <title>Directory</title>
+      <link>http://localhost:1313/glossary/directory/</link>
+      <pubDate>Sat, 10 Aug 2024 01:59:27 +0800</pubDate>
+      <guid>http://localhost:1313/glossary/directory/</guid>
+      <description>Directory is a IT-term for &amp;ldquo;Folder&amp;rdquo;. If I say &amp;ldquo;Navigate to DirA directory&amp;rdquo;, in GUI-based term, it means that I&amp;rsquo;m asking you to double click on the folder named &amp;ldquo;DirA&amp;rdquo; and open it.</description>
+    </item>
+    <item>
+      <title>Terminal</title>
+      <link>http://localhost:1313/glossary/terminal/</link>
+      <pubDate>Sat, 10 Aug 2024 01:45:42 +0800</pubDate>
+      <guid>http://localhost:1313/glossary/terminal/</guid>
+      <description>Think of Terminal / Command Prompt as the black interface that allow users to input command and interact with the Operating System. Using Terminal / Command Prompt allows the users to interact with computer via shell interface. Most users are not accustomed in using the shell interface provided via Terminal / Command Prompt due to our daily lives are so deeply intertwined with the GUI-based Windows OS, i.e. mouse click, double mouse click, up/down/left/right arrow key, drag &amp;amp; drop, moving mouse cursor.</description>
+    </item>
+    <item>
+      <title>SSH</title>
+      <link>http://localhost:1313/glossary/ssh/</link>
+      <pubDate>Sat, 10 Aug 2024 01:18:24 +0800</pubDate>
+      <guid>http://localhost:1313/glossary/ssh/</guid>
+      <description>SSH stands for Secure Shell. Think of a physical computer which is online but you do not have access to the computer physically (We call that a remote computer). SSH provides a secure way to connect to that remote computer via a Terminal / Command prompt and interacting with the shell interface rather than the usual GUI-based interface.</description>
+    </item>
+  </channel>
+</rss>

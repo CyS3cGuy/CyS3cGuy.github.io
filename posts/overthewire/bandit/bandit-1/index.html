@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  Bandit 0 - 1 Walkthrough · CyS3cGuy
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="CyS3cGuy">
+<meta name="description" content="Before you startLink to headingSSH command:
+ssh bandit0@bandit.labs.overthewire.org -p 2220 Login password for Bandit Level 0:
+bandit0
+Solution / CommandsLink to headingBash
+bandit0@bandit:~$ ls bandit0@bandit:~$ cat readme Process BreakdownLink to headingStep 1Link to headingls Once login, we need to first find out what files is in the directory. ls command lists out all the non-hidden files in a directory. We see that only readme exists.">
+<meta name="keywords" content="blog,cybersecurity,ctf,IT">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Bandit 0 - 1 Walkthrough">
+  <meta name="twitter:description" content="Before you startLink to headingSSH command:
+ssh bandit0@bandit.labs.overthewire.org -p 2220 Login password for Bandit Level 0:
+bandit0
+Solution / CommandsLink to headingBash
+bandit0@bandit:~$ ls bandit0@bandit:~$ cat readme Process BreakdownLink to headingStep 1Link to headingls Once login, we need to first find out what files is in the directory. ls command lists out all the non-hidden files in a directory. We see that only readme exists.">
+
+<meta property="og:url" content="http://localhost:1313/posts/overthewire/bandit/bandit-1/">
+  <meta property="og:site_name" content="CyS3cGuy">
+  <meta property="og:title" content="Bandit 0 - 1 Walkthrough">
+  <meta property="og:description" content="Before you startLink to headingSSH command:
+ssh bandit0@bandit.labs.overthewire.org -p 2220 Login password for Bandit Level 0:
+bandit0
+Solution / CommandsLink to headingBash
+bandit0@bandit:~$ ls bandit0@bandit:~$ cat readme Process BreakdownLink to headingStep 1Link to headingls Once login, we need to first find out what files is in the directory. ls command lists out all the non-hidden files in a directory. We see that only readme exists.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-08-08T11:35:04+08:00">
+    <meta property="article:modified_time" content="2024-08-08T11:35:04+08:00">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/posts/overthewire/bandit/bandit-1/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-dark">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      CyS3cGuy
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/">Home</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/glossary/">Glossary</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Browse Contents</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <nav aria-label="breadcrumb">
+    <ol style="padding: 0;">
+        
+        <li style="display: inline;">
+            <a href="/">Home</a>
+        </li>
+        <li style="display: inline">>></li>
+        
+        <li style="display: inline;">
+            <a href="/posts/">All Contents</a>
+        </li>
+        <li style="display: inline">>></li>
+        
+        <li style="display: inline;">
+            <a href="/posts/overthewire/">OverTheWire</a>
+        </li>
+        <li style="display: inline">>></li>
+        
+        <li style="display: inline;">
+            <a href="/posts/overthewire/bandit/">Bandit Walkthroughs</a>
+        </li>
+        <li style="display: inline">>></li>
+        
+        <li class="active" style="display: inline; color: grey">
+            Bandit 0 - 1 Walkthrough
+        </li>
+    </ol>
+</nav>
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/posts/overthewire/bandit/bandit-1/">
+              Bandit 0 - 1 Walkthrough
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2024-08-08T11:35:04&#43;08:00">
+                August 8, 2024
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              One-minute read
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa-solid fa-folder" aria-hidden="true"></i>
+    <a href="/categories/ctf/">CTF</a>
+      <span class="separator">•</span>
+    <a href="/categories/otw/">OTW</a></div>
+
+          
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <h2 id="before-you-start">
+  Before you start
+  <a class="heading-link" href="#before-you-start">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>SSH command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh bandit0@bandit.labs.overthewire.org -p <span class="m">2220</span>
+</span></span></code></pre></div><p>Login password for Bandit Level 0:<br>
+<strong>bandit0</strong></p>
+<hr>
+<h2 id="solution--commands">
+  Solution / Commands
+  <a class="heading-link" href="#solution--commands">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><em>Bash</em></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bandit0@bandit:~$ ls
+</span></span><span class="line"><span class="cl">bandit0@bandit:~$ cat readme
+</span></span></code></pre></div><hr>
+<h2 id="process-breakdown">
+  Process Breakdown
+  <a class="heading-link" href="#process-breakdown">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<u><h3 id="step-1">
+  Step 1
+  <a class="heading-link" href="#step-1">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+</u>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ls
+</span></span></code></pre></div><p>Once login, we need to first find out what files is in the directory. <code>ls</code> command lists out all the <em>non-hidden</em> files in a directory. We see that only <strong>readme</strong> exists.</p>
+<blockquote>
+<p>In Windows or Linux OS, files can be hidden by purposely introducing certain characters. Use <code>ls -la</code> command to lists out all files, including <em>non-hidden</em> files in a directory and the corresponding permissions.</p>
+</blockquote>
+<u><h3 id="step-2">
+  Step 2
+  <a class="heading-link" href="#step-2">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+</u>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat readme
+</span></span></code></pre></div><p><code>cat</code> command displays the content in specified file. Use <code>cat readme</code> to display the content in the file named <strong>readme</strong>. The <strong>readme</strong> file happens to contain the login password for Bandit Level 1.</p>
+<hr>
+<h2 id="bandit-level-1-password">
+  Bandit Level 1 Password
+  <a class="heading-link" href="#bandit-level-1-password">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Login password is <style>
+    .inline-spoiler {
+        position: relative;
+        display: inline-block;
+        cursor: help;
+    }
+
+    .inline-spoiler::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 1px;
+        color: white;
+        background: black;
+        opacity: 1;
+        transition: opacity 0.7s ease, transform 0.3s ease;
+    }
+
+    .inline-spoiler:hover::before {
+        opacity: 0;
+        transform: translateY(-50%)rotateX(80deg);
+        transition: opacity 1.0s ease, transform 0.5s ease;
+        transition-delay: 0.3s;
+    }
+</style>
+
+
+
+
+
+
+    
+        
+            
+                <span class="inline-spoiler"><b>ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If</b></span>
+            
+        
+            
+        
+            
+        
+            
+        
+    
+</p>
+
+      </div>
+
+      <div class="nextprev" style="display:flex; justify-content: space-between;">
+        
+
+
+
+
+
+<div class="next">
+  
+</div>
+
+
+<div class="prev">
+  
+  <a href="/posts/overthewire/bandit/bandit-2/">Next: Bandit 1 - 2 Walkthrough</a>
+  
+</div>
+
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  </section>
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2024
+     CyS3cGuy 
+    
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+  
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>
