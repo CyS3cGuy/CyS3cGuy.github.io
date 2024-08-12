@@ -1,0 +1,36 @@
+.boxHScontain {
+    padding-bottom: 1rem;
+}
+
+.toggle-button, .toggleShowAll-button, .toggleHideAll-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: grey;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Optional: Smooth transition */
+    
+}
+
+.toggle-button:hover, .toggleShowAll-button:hover, .toggleHideAll-button:hover {
+    background-color: #007BFF; /* Nice blue color */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Add a shadow effect */
+    color: white;
+}
+
+.hidden {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.visible {
+    display: block;
+    border: grey;
+    border-style: solid;
+    margin-top: 2rem;
+    padding: 1rem;
+}

@@ -14,26 +14,26 @@
 
 <meta name="author" content="CyS3cGuy">
 <meta name="description" content="Before you startLink to headingSSH command:
-ssh bandit3@bandit.labs.overthewire.org -p 2220 Login password for Bandit Level 3:
-MNk8KNH3Usiio41PRUEoDFPqfxLPlSmxSolution / CommandsLink to headingBash
-bandit3@bandit:~$ ls bandit3@bandit:~$ cd inhere bandit3@bandit:~$ ls -la bandit3@bandit:~$ cat ...Hiding-From-You Process BreakdownLink to headingStep 1Link to headingls Once login, we need to first find out what files is in the directory. ls command shows that only &ldquo;inhere&rdquo; directory exists.">
+bashssh bandit3@bandit.labs.overthewire.org -p 2220Login password for Bandit Level 3:
+MNk8KNH3Usiio41PRUEoDFPqfxLPlSmxSolutions / CommandsLink to headingNote: You can view / hide lengthy explanation with buttons like &ldquo;Show/Hide All&rdquo;, or &ldquo;Show/Hide&rdquo; button at each step.
+Show AllHide AllStep 1Link to headingbashbandit3@bandit:~$ lsShowOnce login, we need to first find out what files is in the directory.">
 <meta name="keywords" content="blog,cybersecurity,ctf,IT">
 
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Bandit 3 - 4 Walkthrough">
   <meta name="twitter:description" content="Before you startLink to headingSSH command:
-ssh bandit3@bandit.labs.overthewire.org -p 2220 Login password for Bandit Level 3:
-MNk8KNH3Usiio41PRUEoDFPqfxLPlSmxSolution / CommandsLink to headingBash
-bandit3@bandit:~$ ls bandit3@bandit:~$ cd inhere bandit3@bandit:~$ ls -la bandit3@bandit:~$ cat ...Hiding-From-You Process BreakdownLink to headingStep 1Link to headingls Once login, we need to first find out what files is in the directory. ls command shows that only “inhere” directory exists.">
+bashssh bandit3@bandit.labs.overthewire.org -p 2220Login password for Bandit Level 3:
+MNk8KNH3Usiio41PRUEoDFPqfxLPlSmxSolutions / CommandsLink to headingNote: You can view / hide lengthy explanation with buttons like “Show/Hide All”, or “Show/Hide” button at each step.
+Show AllHide AllStep 1Link to headingbashbandit3@bandit:~$ lsShowOnce login, we need to first find out what files is in the directory.">
 
 <meta property="og:url" content="http://localhost:1313/posts/overthewire/bandit/bandit-4/">
   <meta property="og:site_name" content="CyS3cGuy">
   <meta property="og:title" content="Bandit 3 - 4 Walkthrough">
   <meta property="og:description" content="Before you startLink to headingSSH command:
-ssh bandit3@bandit.labs.overthewire.org -p 2220 Login password for Bandit Level 3:
-MNk8KNH3Usiio41PRUEoDFPqfxLPlSmxSolution / CommandsLink to headingBash
-bandit3@bandit:~$ ls bandit3@bandit:~$ cd inhere bandit3@bandit:~$ ls -la bandit3@bandit:~$ cat ...Hiding-From-You Process BreakdownLink to headingStep 1Link to headingls Once login, we need to first find out what files is in the directory. ls command shows that only “inhere” directory exists.">
+bashssh bandit3@bandit.labs.overthewire.org -p 2220Login password for Bandit Level 3:
+MNk8KNH3Usiio41PRUEoDFPqfxLPlSmxSolutions / CommandsLink to headingNote: You can view / hide lengthy explanation with buttons like “Show/Hide All”, or “Show/Hide” button at each step.
+Show AllHide AllStep 1Link to headingbashbandit3@bandit:~$ lsShowOnce login, we need to first find out what files is in the directory.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -69,6 +69,26 @@ bandit3@bandit:~$ ls bandit3@bandit:~$ cd inhere bandit3@bandit:~$ ls -la bandit
 
 
  
+  
+    
+    <link rel="stylesheet" href="/css/ctf/sc_spoiler.css" media="screen">
+  
+
+  
+    
+    <link rel="stylesheet" href="/css/sc_hideshow.css" media="screen">
+  
+
+  
+    
+    <link rel="stylesheet" href="/css/fcblock_langindicator.css" media="screen">
+  
+
+  
+    
+    <link rel="stylesheet" href="/css/customstyle.css" media="screen">
+  
+
 
 
 
@@ -150,7 +170,7 @@ bandit3@bandit:~$ ls bandit3@bandit:~$ cd inhere bandit3@bandit:~$ ls -la bandit
     <div class="content">
       
   <section class="container post">
-    <nav aria-label="breadcrumb">
+    <nav class="breadcrumb">
     <ol style="padding: 0;">
         
         <li style="display: inline;">
@@ -213,136 +233,185 @@ bandit3@bandit:~$ ls bandit3@bandit:~$ cd inhere bandit3@bandit:~$ ls -la bandit
 
       <div class="post-content">
         
-        <h2 id="before-you-start">
+        
+
+
+<h2 id="before-you-start">
   Before you start
+  
   <a class="heading-link" href="#before-you-start">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
-</h2>
-<p>SSH command:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh bandit3@bandit.labs.overthewire.org -p <span class="m">2220</span>
-</span></span></code></pre></div><p>Login password for Bandit Level 3:<br>
-<style>
-    .inline-spoiler {
-        position: relative;
-        display: inline-block;
-        cursor: help;
-    }
+  
 
-    .inline-spoiler::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 1px;
-        color: white;
-        background: black;
-        opacity: 1;
-        transition: opacity 0.7s ease, transform 0.3s ease;
-    }
+</h2><p>SSH command:</p>
+<div class="fcode-language">bash</div>
 
-    .inline-spoiler:hover::before {
-        opacity: 0;
-        transform: translateY(-50%)rotateX(80deg);
-        transition: opacity 1.0s ease, transform 0.5s ease;
-        transition-delay: 0.3s;
-    }
-</style>
-
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh bandit3@bandit.labs.overthewire.org -p <span class="m">2220</span></span></span></code></pre></div><p>Login password for Bandit Level 3:<br>
 
 
 
 
 
     
+    
+        
         
             
         
+        
             
+        
         
             
                 <span class="inline-spoiler"><b>MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx</b></span>
             
+        
+        
+            
+        
         
             
         
     
 </p>
 <hr>
-<h2 id="solution--commands">
-  Solution / Commands
-  <a class="heading-link" href="#solution--commands">
+
+<h2 id="solutions--commands">
+  Solutions / Commands
+  
+  <a class="heading-link" href="#solutions--commands">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
-</h2>
-<p><em>Bash</em></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bandit3@bandit:~$ ls
-</span></span><span class="line"><span class="cl">bandit3@bandit:~$ <span class="nb">cd</span> inhere
-</span></span><span class="line"><span class="cl">bandit3@bandit:~$ ls -la
-</span></span><span class="line"><span class="cl">bandit3@bandit:~$ cat ...Hiding-From-You
-</span></span></code></pre></div><hr>
-<h2 id="process-breakdown">
-  Process Breakdown
-  <a class="heading-link" href="#process-breakdown">
-    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<u><h3 id="step-1">
+  
+
+</h2><blockquote>
+<p>Note: You can view / hide lengthy explanation with buttons like <strong>&ldquo;Show/Hide All&rdquo;</strong>, or <strong>&ldquo;Show/Hide&rdquo;</strong> button at each step.</p>
+</blockquote>
+
+
+<div class="boxHScontain" id="box_hs">
+
+    
+    
+
+    <button class="toggleShowAll-button" onclick="toggleShowAll(this.id)" id="but_s-all">Show All</button>
+    <button class="toggleHideAll-button" onclick="toggleHideAll(this.id)" id="but_h-all">Hide All</button>
+
+    
+
+
+    
+</div>
+<u>
+<h3 id="step-1">
   Step 1
+  
   <a class="heading-link" href="#step-1">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
-</h3>
-</u>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ls
-</span></span></code></pre></div><p>Once login, we need to first find out what files is in the directory. <code>ls</code> command shows that only <strong>&ldquo;inhere&rdquo;</strong> directory exists.</p>
-<u><h3 id="step-2">
+  
+
+</h3></u>
+<div class="fcode-language">bash</div>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bandit3@bandit:~$ ls</span></span></code></pre></div>
+
+<div class="boxHScontain" id="box_hsstep-1">
+
+    
+    
+
+    <button class="toggle-button" onclick="toggleHideShow(this.id)" id="but_hsstep-1">Show</button>
+    <div id="hsstep-1" class="hidden hiddentext">
+        Once login, we need to first find out what files is in the directory. <code>ls</code> command shows that only <strong>&ldquo;inhere&rdquo;</strong> directory exists.
+    </div>
+
+     
+    
+
+
+    
+</div>
+<u>
+<h3 id="step-2">
   Step 2
+  
   <a class="heading-link" href="#step-2">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
-</h3>
-</u>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> inhere
-</span></span></code></pre></div><p><code>cd</code> is a Terminal command that stands for <em>Change Directory</em>. We can view our current working directory by using the command <code>pwd</code>, which shows that we are currently at the directory named <strong>&quot;/home/bandit3&quot;</strong>. We need to get into <strong>&quot;/home/bandit3/inhere&quot;</strong> directory. So we can use either of the following commands to change to the desired directory:</p>
+  
+
+</h3></u>
+<div class="fcode-language">bash</div>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bandit3@bandit:~$ <span class="nb">cd</span> inhere</span></span></code></pre></div>
+
+<div class="boxHScontain" id="box_hsstep-2">
+
+    
+    
+
+    <button class="toggle-button" onclick="toggleHideShow(this.id)" id="but_hsstep-2">Show</button>
+    <div id="hsstep-2" class="hidden hiddentext">
+        <p><code>cd</code> is a Terminal command that stands for <em>Change Directory</em>. We can view our current working directory by using the command <code>pwd</code>, which shows that we are currently at the directory named <strong>&quot;/home/bandit3&quot;</strong>. We need to get into <strong>&quot;/home/bandit3/inhere&quot;</strong> directory. So we can use either of the following commands to change to the desired directory:</p>
 <ul>
 <li><code>cd inhere</code></li>
 <li><code>cd /home/bandit3/inhere</code></li>
 </ul>
-<u><h3 id="step-3">
+    </div>
+
+     
+    
+
+
+    
+</div>
+<u>
+<h3 id="step-3">
   Step 3
+  
   <a class="heading-link" href="#step-3">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
-</h3>
-</u>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ls -la
-</span></span></code></pre></div><p>If we use the usual <code>ls</code> to list all the files and directories in this directory, it will return an empty result. So it seems that the files/directories are hidden from us. In Unix system, to hide a file, we add a <code>.</code> in front of a filename.</p>
+  
+
+</h3></u>
+<div class="fcode-language">bash</div>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bandit3@bandit:~$ ls -la</span></span></code></pre></div>
+
+<div class="boxHScontain" id="box_hsstep-3">
+
+    
+    
+
+    <button class="toggle-button" onclick="toggleHideShow(this.id)" id="but_hsstep-3">Show</button>
+    <div id="hsstep-3" class="hidden hiddentext">
+        <p>If we use the usual <code>ls</code> to list all the files and directories in this directory, it will return an empty result. So it seems that the files/directories are hidden from us. In Unix system, to hide a file, we add a <code>.</code> in front of a filename.</p>
 <p>To show hidden files/directories, we use:</p>
 <ul>
 <li><code>ls -a</code> to list out all files and directories, including hidden ones</li>
 <li><code>ls -la</code> to list out all files and directories, including hidden ones, and the corresponding permissions.</li>
 </ul>
 <p>Anyway, using <code>ls -la</code> shows the following result:</p>
+<div class="fcode-language">bash</div>
+
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bandit3@bandit:~/inhere$ ls -la
 </span></span><span class="line"><span class="cl">total <span class="m">12</span>
 </span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">2</span> root    root    <span class="m">4096</span> Jul <span class="m">17</span> 15:57 .
 </span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">3</span> root    root    <span class="m">4096</span> Jul <span class="m">17</span> 15:57 ..
-</span></span><span class="line"><span class="cl">-rw-r----- <span class="m">1</span> bandit4 bandit3   <span class="m">33</span> Jul <span class="m">17</span> 15:57 ...Hiding-From-You
-</span></span></code></pre></div><p>Before we go into each item, we need to understand how permission in Unix system works. Supposedly we have this line item <code>-rwxr-xr-- 3 user1 user2 33 Aug 24 15:58 exampletext</code></p>
+</span></span><span class="line"><span class="cl">-rw-r----- <span class="m">1</span> bandit4 bandit3   <span class="m">33</span> Jul <span class="m">17</span> 15:57 ...Hiding-From-You</span></span></code></pre></div><p>Before we go into each item, we need to understand how permission in Unix system works. Supposedly we have this line item <code>-rwxr-xr-- 3 user1 user2 33 Aug 24 15:58 exampletext</code></p>
 <ul>
-<li><code>exampletext</code> is the filename of a file.</li>
-<li><code>user1</code> is the owner of the file <code>exampletext</code></li>
-<li><code>user2</code> is the user group associated with the file <code>exampletext</code></li>
-<li><code>-rwxr-xr--</code> is the permission. We have to view this permission string as 4 sets:</li>
+<li><strong>&ldquo;exampletext&rdquo;</strong> is the filename of a file.</li>
+<li><strong>&ldquo;user1&rdquo;</strong> is the owner of the file <strong>&ldquo;exampletext&rdquo;</strong></li>
+<li><strong>&ldquo;user2&rdquo;</strong> is the user group associated with the file <strong>&ldquo;exampletext&rdquo;</strong></li>
+<li><strong>&quot;-rwxr-xr&ndash;&quot;</strong> is the permission. We have to view this permission string as 4 sets:</li>
 </ul>
 <table>
 <thead>
@@ -354,22 +423,22 @@ bandit3@bandit:~$ ls bandit3@bandit:~$ cd inhere bandit3@bandit:~$ ls -la bandit
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">1<sup>st</sup> set</td>
+<td style="text-align:left">1<!-- raw HTML omitted -->st<!-- raw HTML omitted --> set</td>
 <td style="text-align:center"><code>-</code></td>
 <td style="text-align:left">Indicates the entity type. Common types are file (represented by <code>-</code>) and directory (represented by <code>d</code>)</td>
 </tr>
 <tr>
-<td style="text-align:left">2<sup>nd</sup> set</td>
+<td style="text-align:left">2<!-- raw HTML omitted -->nd<!-- raw HTML omitted --> set</td>
 <td style="text-align:center"><code>rwx</code></td>
 <td style="text-align:left">Indicates that the owner has read (<code>r</code>), write <code>w</code> and execute <code>x</code> permissions. It goes without saying that it is possible to control the permission by replacing any alphabets with a <code>-</code> to indicate no permission given for specific action.</td>
 </tr>
 <tr>
-<td style="text-align:left">3<sup>rd</sup> set</td>
+<td style="text-align:left">3<!-- raw HTML omitted -->rd<!-- raw HTML omitted --> set</td>
 <td style="text-align:center"><code>r-x</code></td>
 <td style="text-align:left">Indicates that the user group has read (<code>r</code>) and execute (<code>x</code>) permissions, but no write (<code>w</code>) permission, as the permission bit is replaced by <code>-</code>.</td>
 </tr>
 <tr>
-<td style="text-align:left">4<sup>th</sup> set</td>
+<td style="text-align:left">4<!-- raw HTML omitted -->th<!-- raw HTML omitted --> set</td>
 <td style="text-align:center"><code>r--</code></td>
 <td style="text-align:left">Indicates that remaining users, excluding owner and user group, only has read (<code>r</code>) permission, but no write (<code>w</code>) and execute (<code>x</code>) permission, as the permission bits are replaced by <code>-</code>.</td>
 </tr>
@@ -377,7 +446,7 @@ bandit3@bandit:~$ ls bandit3@bandit:~$ cd inhere bandit3@bandit:~$ ls -la bandit
 </table>
 <p>With this knowledge, let&rsquo;s look at individual line item from <code>ls -la</code> command:</p>
 <p><code>drwxr-xr-x 2 root    root    4096 Jul 17 15:57 .</code></p>
-<p><strong>&quot;.&quot;</strong> is a directory, represented by the <strong>&ldquo;d&rdquo;</strong> in front of the permission string. In fact, it represents the current directory. If we use <code>cd .</code> command, it essentially does nothing because it just navigate back to itself. The owner <strong>&ldquo;root&rdquo;</strong> have full permissions, <strong>&ldquo;root&rdquo;</strong> user group has read and execute permission, while remaining users have read and execute permission. Since we login as <strong>bandit3</strong> user, we are not <strong>&ldquo;root&rdquo;</strong> user or part of <strong>&ldquo;root&rdquo;</strong> user group. All we can do is read (e.g. copy the content, display content) and execute (e.g. navigate to the directory), but cannot write (e.g. paste new content, create new files or directories).</p>
+<p><strong>&quot;.&quot;</strong> is a directory, represented by the <strong>&ldquo;d&rdquo;</strong> in front of the permission string. In fact, it represents the current directory. If we use <code>cd .</code> command, it essentially does nothing because it just navigate back to itself. The owner <strong>&ldquo;root&rdquo;</strong> have full permissions, <strong>&ldquo;root&rdquo;</strong> user group has read and execute permission, while remaining users have read and execute permission. Since we login as <strong>&ldquo;bandit3&rdquo;</strong> user, we are not <strong>&ldquo;root&rdquo;</strong> user or part of <strong>&ldquo;root&rdquo;</strong> user group. All we can do is read (e.g. copy the content, display content) and execute (e.g. navigate to the directory), but cannot write (e.g. paste new content, create new files or directories).</p>
 <blockquote>
 <p><strong>Note:</strong></p>
 <p>&ldquo;root&rdquo; is a super user in Unix system.</p>
@@ -393,73 +462,86 @@ bandit3@bandit:~$ ls bandit3@bandit:~$ cd inhere bandit3@bandit:~$ ls -la bandit
 <li>Remaining users have no permission at all.</li>
 </ol>
 <p>Because we login as <strong>&ldquo;bandit3&rdquo;</strong>, we have read permission. So we will proceed to display the content of this file.</p>
-<u><h3 id="step-4">
+
+    </div>
+
+     
+    
+
+
+    
+</div>
+<u>
+<h3 id="step-4">
   Step 4
+  
   <a class="heading-link" href="#step-4">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
-</h3>
-</u>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat ...Hiding-From-You
-</span></span></code></pre></div><p>This command display the content of <strong>&quot;&hellip;Hiding-From-You&quot;</strong>. The file happens to contain the login password for Bandit Level 4.</p>
+  
+
+</h3></u>
+<div class="fcode-language">bash</div>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bandit3@bandit:~$ cat ...Hiding-From-You</span></span></code></pre></div>
+
+<div class="boxHScontain" id="box_hsstep-4">
+
+    
+    
+
+    <button class="toggle-button" onclick="toggleHideShow(this.id)" id="but_hsstep-4">Show</button>
+    <div id="hsstep-4" class="hidden hiddentext">
+        <p>This command display the content of <strong>&quot;&hellip;Hiding-From-You&quot;</strong>. The file happens to contain the login password for Bandit Level 4.</p>
 <blockquote>
 <p>Tips:</p>
 <p>Terminal / Command prompt shell usually supports tab auto-completion. So to save time, one can simply input <code>cat ...</code> and press <em>Tab</em> key to auto complete to <code>cat ...Hiding-From-You</code>.</p>
 <p>The reason why 3 dots&rsquo; are needed rather than 1 dot for tab auto-completion is because 1 dot can mean either <strong>&quot;.&quot;</strong> (current directory), <strong>&quot;..&quot;</strong> (previous directory) or <strong>&quot;&hellip;Hiding-From-You&quot;</strong>.</p>
 </blockquote>
+
+    </div>
+
+     
+    
+
+
+    
+</div>
 <hr>
-<h2 id="bandit-level-4-password">
+
+<h2 id="bandit-level-hahahugoshortcode15s17hbhb-password">
   Bandit Level 4 Password
-  <a class="heading-link" href="#bandit-level-4-password">
+  
+  <a class="heading-link" href="#bandit-level-hahahugoshortcode15s17hbhb-password">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
-</h2>
-<p>Login password is <style>
-    .inline-spoiler {
-        position: relative;
-        display: inline-block;
-        cursor: help;
-    }
+  
 
-    .inline-spoiler::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 1px;
-        color: white;
-        background: black;
-        opacity: 1;
-        transition: opacity 0.7s ease, transform 0.3s ease;
-    }
-
-    .inline-spoiler:hover::before {
-        opacity: 0;
-        transform: translateY(-50%)rotateX(80deg);
-        transition: opacity 1.0s ease, transform 0.5s ease;
-        transition-delay: 0.3s;
-    }
-</style>
-
-
+</h2><p>Login password is 
 
 
 
 
     
+    
+        
         
             
         
-            
         
             
+        
+        
+            
+        
         
             
                 <span class="inline-spoiler"><b>2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ</b></span>
+            
+        
+        
             
         
     
@@ -482,6 +564,8 @@ bandit3@bandit:~$ ls bandit3@bandit:~$ cd inhere bandit3@bandit:~$ ls -la bandit
 
 
 <div class="prev">
+  
+  <a href="/posts/overthewire/bandit/bandit-5/">Next: Bandit 4 - 5 Walkthrough</a>
   
 </div>
 
@@ -532,6 +616,11 @@ bandit3@bandit:~$ ls bandit3@bandit:~$ cd inhere bandit3@bandit:~$ ls -la bandit
   <script src="/js/coder.js"></script>
   
 
+  
+  
+  
+  <script src="/js/customjs.js"></script>
+  
   
 
   

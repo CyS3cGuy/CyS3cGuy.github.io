@@ -1,0 +1,12 @@
+.fcode-language {
+    margin-bottom: -2rem;
+    font-size: 0.75em;
+    padding: 0 1.5rem;
+    background-color: rgba(105,105,105,0.25);
+    border-radius: 1rem 1rem 0 0;
+}
+
+/* Override the original fenced code block border radius to suit our added language indicator div  */
+pre.chroma {
+    border-radius: 0 0 1rem 1rem;
+}

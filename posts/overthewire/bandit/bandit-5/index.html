@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  Bandit 4 - 5 Walkthrough · CyS3cGuy
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="CyS3cGuy">
+<meta name="description" content="Glossary Lookup: | Printable/Unprintable CharactersBefore you startLink to headingSSH command:
+bashssh bandit4@bandit.labs.overthewire.org -p 2220Login password for Bandit Level 4:
+2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJSolutions / CommandsLink to headingNote: You can view / hide lengthy explanation with buttons like &ldquo;Show/Hide All&rdquo;, or &ldquo;Show/Hide&rdquo; button at each step.
+Show AllHide AllStep 1Link to headingbashbandit4@bandit:~$ ls bandit4@bandit:~$ cd inhere bandit4@bandit:~$ ls -aShowBasically, we need to know what directory we need to navigate into.">
+<meta name="keywords" content="blog,cybersecurity,ctf,IT">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Bandit 4 - 5 Walkthrough">
+  <meta name="twitter:description" content="Glossary Lookup: | Printable/Unprintable CharactersBefore you startLink to headingSSH command:
+bashssh bandit4@bandit.labs.overthewire.org -p 2220Login password for Bandit Level 4:
+2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJSolutions / CommandsLink to headingNote: You can view / hide lengthy explanation with buttons like “Show/Hide All”, or “Show/Hide” button at each step.
+Show AllHide AllStep 1Link to headingbashbandit4@bandit:~$ ls bandit4@bandit:~$ cd inhere bandit4@bandit:~$ ls -aShowBasically, we need to know what directory we need to navigate into.">
+
+<meta property="og:url" content="http://localhost:1313/posts/overthewire/bandit/bandit-5/">
+  <meta property="og:site_name" content="CyS3cGuy">
+  <meta property="og:title" content="Bandit 4 - 5 Walkthrough">
+  <meta property="og:description" content="Glossary Lookup: | Printable/Unprintable CharactersBefore you startLink to headingSSH command:
+bashssh bandit4@bandit.labs.overthewire.org -p 2220Login password for Bandit Level 4:
+2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJSolutions / CommandsLink to headingNote: You can view / hide lengthy explanation with buttons like “Show/Hide All”, or “Show/Hide” button at each step.
+Show AllHide AllStep 1Link to headingbashbandit4@bandit:~$ ls bandit4@bandit:~$ cd inhere bandit4@bandit:~$ ls -aShowBasically, we need to know what directory we need to navigate into.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-08-12T11:55:37+08:00">
+    <meta property="article:modified_time" content="2024-08-12T11:55:37+08:00">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/posts/overthewire/bandit/bandit-5/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+  
+    
+    <link rel="stylesheet" href="/css/ctf/sc_spoiler.css" media="screen">
+  
+
+  
+    
+    <link rel="stylesheet" href="/css/sc_hideshow.css" media="screen">
+  
+
+  
+    
+    <link rel="stylesheet" href="/css/fcblock_langindicator.css" media="screen">
+  
+
+  
+    
+    <link rel="stylesheet" href="/css/customstyle.css" media="screen">
+  
+
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-dark">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      CyS3cGuy
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/">Home</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/glossary/">Glossary</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Browse Contents</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <nav class="breadcrumb">
+    <ol style="padding: 0;">
+        
+        <li style="display: inline;">
+            <a href="/">Home</a>
+        </li>
+        <li style="display: inline">>></li>
+        
+        <li style="display: inline;">
+            <a href="/posts/">All Contents</a>
+        </li>
+        <li style="display: inline">>></li>
+        
+        <li style="display: inline;">
+            <a href="/posts/overthewire/">OverTheWire</a>
+        </li>
+        <li style="display: inline">>></li>
+        
+        <li style="display: inline;">
+            <a href="/posts/overthewire/bandit/">Bandit Walkthroughs</a>
+        </li>
+        <li style="display: inline">>></li>
+        
+        <li class="active" style="display: inline; color: grey">
+            Bandit 4 - 5 Walkthrough
+        </li>
+    </ol>
+</nav>
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/posts/overthewire/bandit/bandit-5/">
+              Bandit 4 - 5 Walkthrough
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2024-08-12T11:55:37&#43;08:00">
+                August 12, 2024
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              4-minute read
+            </span>
+          </div>
+          
+          
+          
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        
+
+
+<div id="glossary-lookup">
+    <b>Glossary Lookup: </b>
+    
+    
+    | <a href="/glossary/#printable%2funprintable-characters">Printable/Unprintable Characters</a>
+    
+</div>
+
+
+
+<h2 id="before-you-start">
+  Before you start
+  
+  <a class="heading-link" href="#before-you-start">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+  
+
+</h2><p>SSH command:</p>
+<div class="fcode-language">bash</div>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh bandit4@bandit.labs.overthewire.org -p <span class="m">2220</span></span></span></code></pre></div><p>Login password for Bandit Level 4:<br>
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+                <span class="inline-spoiler"><b>2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ</b></span>
+            
+        
+        
+            
+        
+    
+</p>
+<hr>
+
+<h2 id="solutions--commands">
+  Solutions / Commands
+  
+  <a class="heading-link" href="#solutions--commands">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+  
+
+</h2><blockquote>
+<p>Note: You can view / hide lengthy explanation with buttons like <strong>&ldquo;Show/Hide All&rdquo;</strong>, or <strong>&ldquo;Show/Hide&rdquo;</strong> button at each step.</p>
+</blockquote>
+
+
+<div class="boxHScontain" id="box_hs">
+
+    
+    
+
+    <button class="toggleShowAll-button" onclick="toggleShowAll(this.id)" id="but_s-all">Show All</button>
+    <button class="toggleHideAll-button" onclick="toggleHideAll(this.id)" id="but_h-all">Hide All</button>
+
+    
+
+
+    
+</div>
+<u>
+<h3 id="step-1">
+  Step 1
+  
+  <a class="heading-link" href="#step-1">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+  
+
+</h3></u>
+<div class="fcode-language">bash</div>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bandit4@bandit:~$ ls
+</span></span><span class="line"><span class="cl">bandit4@bandit:~$ <span class="nb">cd</span> inhere
+</span></span><span class="line"><span class="cl">bandit4@bandit:~$ ls -a</span></span></code></pre></div>
+
+<div class="boxHScontain" id="box_hsstep-1">
+
+    
+    
+
+    <button class="toggle-button" onclick="toggleHideShow(this.id)" id="but_hsstep-1">Show</button>
+    <div id="hsstep-1" class="hidden hiddentext">
+        <p>Basically, we need to know what directory we need to navigate into. For that, we need to use <code>ls</code> command to know the name of the directory. We also need to know what files are present within a directory.</p>
+<p>We already know a lot about these commands from previous levels, so there is no point to repeat those. If you are unfamiliar, remember to refer back to previous levels.</p>
+<p>After the <code>ls -a</code> command in <strong>&ldquo;inhere&rdquo;</strong>, we notice there are 10 files, excluding the <strong>&quot;.&quot;</strong> and <strong>&quot;..&quot;</strong>, and all the files start with hyphen <strong>&quot;-&quot;</strong>:</p>
+<div class="fcode-language">bash</div>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bandit4@bandit:~/inhere$ ls -a
+</span></span><span class="line"><span class="cl">.  ..  -file00  -file01  -file02  -file03  -file04  -file05  -file06  -file07  -file08  -file09</span></span></code></pre></div>
+    </div>
+
+     
+    
+
+
+    
+</div>
+<u>
+<h3 id="step-2">
+  Step 2
+  
+  <a class="heading-link" href="#step-2">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+  
+
+</h3></u>
+<div class="fcode-language">bash</div>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bandit4@bandit:~$ file ./-*</span></span></code></pre></div>
+
+<div class="boxHScontain" id="box_hsstep-2">
+
+    
+    
+
+    <button class="toggle-button" onclick="toggleHideShow(this.id)" id="but_hsstep-2">Show</button>
+    <div id="hsstep-2" class="hidden hiddentext">
+        <p>Based on the hints given in <a href="https://overthewire.org/wargames/bandit/bandit5.html"  class="external-link" target="_blank" rel="noopener">Bandit Level 4 -&gt; 5 OverTheWire page</a>, the password is stored in the only human-readable file, i.e. printable characters.</p>
+<p>There are a number of ways to obtain the password. But the general idea and steps are:</p>
+<ol>
+<li>We first need to identify which file contains only human-readable / printable characters.</li>
+<li>Then we display the file</li>
+</ol>
+<p>To achieve (1), we can use the <code>file</code> command. <code>file</code> command tells us what type of file and what kind of data it contains. Let&rsquo;s take 1 file for example:</p>
+<div class="fcode-language">bash</div>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bandit4@bandit:~$ file ./-file00
+</span></span><span class="line"><span class="cl">./-file00: data</span></span></code></pre></div><p>Remember that the filename starts with hyphen so we need to append <strong>&quot;./&quot;</strong> to escape the hyphen. The output of the above command shows that <strong>&quot;./-file00&quot;</strong> has a filetype named as <strong>&ldquo;data&rdquo;</strong>. Let us display the file using <code>cat ./-file00</code> command.</p>
+<p>For tidiness reason, I will not show the output here, but you get the idea. It is showing a lot of gibberish, non printable characters. So if <code>file</code> command tells you that a file has the filetype named <strong>&ldquo;data&rdquo;</strong>, you know it has non-printable characters.</p>
+<p>We continue to use <code>file</code> command on every single file in this directory and soon it may become a bit tedious to manually input <code>file</code> command and change the filename for every file. We have a better way of doing this.</p>
+<div class="fcode-language">bash</div>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bandit4@bandit:~$ file ./-*
+</span></span><span class="line"><span class="cl">./-file00: data
+</span></span><span class="line"><span class="cl">./-file01: data
+</span></span><span class="line"><span class="cl">./-file02: data
+</span></span><span class="line"><span class="cl">./-file03: data
+</span></span><span class="line"><span class="cl">./-file04: data
+</span></span><span class="line"><span class="cl">./-file05: data
+</span></span><span class="line"><span class="cl">./-file06: data
+</span></span><span class="line"><span class="cl">./-file07: ASCII text
+</span></span><span class="line"><span class="cl">./-file08: data
+</span></span><span class="line"><span class="cl">./-file09: data</span></span></code></pre></div><p>The command outputs all of files in the folder and its corresponding filetype. We discovered that <strong>&quot;./file07&quot;</strong> has filetype <strong>&ldquo;ASCII&rdquo;</strong>. You can think of ASCII means printable characters, contains alphabets and numbers, something that makes sense to humans. So we got our answers and we can simply <code>cat</code> the file to display the content. Full stop.</p>
+<p>But the question is&hellip; what did we do to display all filetypes at one go?</p>
+<p><strong>Regular Expression (RegEx)</strong></p>
+<p>We used a technique called regular expression (a.k.a. &ldquo;RegEx&rdquo;) to effectively handle all the files in one go.</p>
+<p>Imagine you have a lot of files and directories to work with, if you were to handle each file and directory one by one, you are going to waste a lot of time and effort. So most of the time, your common sense will kick in, where you try to name your files or folders according to a certain naming patterns, so that you can search using a particular keyword and all of the relevant files will appear at one go.</p>
+<p>RegEx exploits some kind of patterns to effectively perform bulk operation on files and folders. So for example, in this case, we see that all 10 files have the pattern that always start with <strong>&quot;./-file0&quot;</strong> and the last character is a digit.</p>
+<p>To obtain all the files at one go, we can use the RegEx star <strong>&quot;*&quot;</strong> to represents any characters (be it printable or non-printable, be it one character or multiple characters). So in this case, since we use built our RegEx to be <strong>&quot;./-*&quot;</strong>, it means that the pattern will always start with <strong>&quot;./-&quot;</strong> and the <strong>&quot;*&quot;</strong> represents any trailing characters. Take note that the following RegEx will work as well:</p>
+<ul>
+<li><strong>./-f*</strong></li>
+<li><strong>./-fi*</strong></li>
+<li><strong>./-fil*</strong></li>
+<li><strong>./-file*</strong></li>
+<li><strong>./-file0*</strong></li>
+<li><strong>./-??????</strong></li>
+<li><strong>./-f?????</strong></li>
+<li><strong>./-fi????</strong></li>
+</ul>
+<p>and many many more, as long as you know what does the symbol in RegEx mean. Here are 2 most common symbols in RegEx:</p>
+<ul>
+<li><strong>&quot;*&quot;</strong> means any characters, be it one or multiple characters.</li>
+<li><strong>&quot;?&quot;</strong> means any character, but only one character. So in example above, you can see that we have six <strong>&quot;?&quot;</strong> when our pattern starts with <strong>&quot;./-&quot;</strong></li>
+</ul>
+
+    </div>
+
+     
+    
+
+
+    
+</div>
+<u>
+<h3 id="step-3">
+  Step 3
+  
+  <a class="heading-link" href="#step-3">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+  
+
+</h3></u>
+<div class="fcode-language">bash</div>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bandit4@bandit:~$ cat ./-file07</span></span></code></pre></div>
+
+<div class="boxHScontain" id="box_hsstep-3">
+
+    
+    
+
+    <button class="toggle-button" onclick="toggleHideShow(this.id)" id="but_hsstep-3">Show</button>
+    <div id="hsstep-3" class="hidden hiddentext">
+        Once we know that <strong>&quot;./-file07&quot;</strong> contains only ASCII characters, we <code>cat</code> the content to display the next level password.
+    </div>
+
+     
+    
+
+
+    
+</div>
+<hr>
+
+<h2 id="bandit-level-hahahugoshortcode14s16hbhb-password">
+  Bandit Level 5 Password
+  
+  <a class="heading-link" href="#bandit-level-hahahugoshortcode14s16hbhb-password">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+  
+
+</h2><p>Login password is 
+
+
+
+
+    
+    
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+                <span class="inline-spoiler"><b>4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw</b></span>
+            
+        
+    
+</p>
+
+      </div>
+
+      <div class="nextprev" style="display:flex; justify-content: space-between;">
+        
+
+
+
+
+
+<div class="next">
+  
+  <a href="/posts/overthewire/bandit/bandit-4/">Previous: Bandit 3 - 4 Walkthrough</a>
+  
+</div>
+
+
+<div class="prev">
+  
+</div>
+
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  </section>
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2024
+     CyS3cGuy 
+    
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+  
+  
+  <script src="/js/customjs.js"></script>
+  
+  
+
+  
+
+
+  
+  
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

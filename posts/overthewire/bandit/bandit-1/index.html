@@ -14,29 +14,29 @@
 
 <meta name="author" content="CyS3cGuy">
 <meta name="description" content="Before you startLink to headingSSH command:
-ssh bandit0@bandit.labs.overthewire.org -p 2220 Login password for Bandit Level 0:
+bashssh bandit0@bandit.labs.overthewire.org -p 2220Login password for Bandit Level 0:
 bandit0
-Solution / CommandsLink to headingBash
-bandit0@bandit:~$ ls bandit0@bandit:~$ cat readme Process BreakdownLink to headingStep 1Link to headingls Once login, we need to first find out what files is in the directory. ls command lists out all the non-hidden files in a directory. We see that only readme exists.">
+Solutions / CommandsLink to headingNote: You can view / hide lengthy explanation with buttons like &ldquo;Show/Hide All&rdquo;, or &ldquo;Show/Hide&rdquo; button at each step.
+Show AllHide AllStep 1Link to headingbashbandit0@bandit:~$ lsShowOnce login, we need to first find out what files is in the directory.">
 <meta name="keywords" content="blog,cybersecurity,ctf,IT">
 
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Bandit 0 - 1 Walkthrough">
   <meta name="twitter:description" content="Before you startLink to headingSSH command:
-ssh bandit0@bandit.labs.overthewire.org -p 2220 Login password for Bandit Level 0:
+bashssh bandit0@bandit.labs.overthewire.org -p 2220Login password for Bandit Level 0:
 bandit0
-Solution / CommandsLink to headingBash
-bandit0@bandit:~$ ls bandit0@bandit:~$ cat readme Process BreakdownLink to headingStep 1Link to headingls Once login, we need to first find out what files is in the directory. ls command lists out all the non-hidden files in a directory. We see that only readme exists.">
+Solutions / CommandsLink to headingNote: You can view / hide lengthy explanation with buttons like “Show/Hide All”, or “Show/Hide” button at each step.
+Show AllHide AllStep 1Link to headingbashbandit0@bandit:~$ lsShowOnce login, we need to first find out what files is in the directory.">
 
 <meta property="og:url" content="http://localhost:1313/posts/overthewire/bandit/bandit-1/">
   <meta property="og:site_name" content="CyS3cGuy">
   <meta property="og:title" content="Bandit 0 - 1 Walkthrough">
   <meta property="og:description" content="Before you startLink to headingSSH command:
-ssh bandit0@bandit.labs.overthewire.org -p 2220 Login password for Bandit Level 0:
+bashssh bandit0@bandit.labs.overthewire.org -p 2220Login password for Bandit Level 0:
 bandit0
-Solution / CommandsLink to headingBash
-bandit0@bandit:~$ ls bandit0@bandit:~$ cat readme Process BreakdownLink to headingStep 1Link to headingls Once login, we need to first find out what files is in the directory. ls command lists out all the non-hidden files in a directory. We see that only readme exists.">
+Solutions / CommandsLink to headingNote: You can view / hide lengthy explanation with buttons like “Show/Hide All”, or “Show/Hide” button at each step.
+Show AllHide AllStep 1Link to headingbashbandit0@bandit:~$ lsShowOnce login, we need to first find out what files is in the directory.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -72,6 +72,26 @@ bandit0@bandit:~$ ls bandit0@bandit:~$ cat readme Process BreakdownLink to head
 
 
  
+  
+    
+    <link rel="stylesheet" href="/css/ctf/sc_spoiler.css" media="screen">
+  
+
+  
+    
+    <link rel="stylesheet" href="/css/sc_hideshow.css" media="screen">
+  
+
+  
+    
+    <link rel="stylesheet" href="/css/fcblock_langindicator.css" media="screen">
+  
+
+  
+    
+    <link rel="stylesheet" href="/css/customstyle.css" media="screen">
+  
+
 
 
 
@@ -153,7 +173,7 @@ bandit0@bandit:~$ ls bandit0@bandit:~$ cat readme Process BreakdownLink to head
     <div class="content">
       
   <section class="container post">
-    <nav aria-label="breadcrumb">
+    <nav class="breadcrumb">
     <ol style="padding: 0;">
         
         <li style="display: inline;">
@@ -216,110 +236,151 @@ bandit0@bandit:~$ ls bandit0@bandit:~$ cat readme Process BreakdownLink to head
 
       <div class="post-content">
         
-        <h2 id="before-you-start">
+        
+
+
+<h2 id="before-you-start">
   Before you start
+  
   <a class="heading-link" href="#before-you-start">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
-</h2>
-<p>SSH command:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh bandit0@bandit.labs.overthewire.org -p <span class="m">2220</span>
-</span></span></code></pre></div><p>Login password for Bandit Level 0:<br>
+  
+
+</h2><p>SSH command:</p>
+<div class="fcode-language">bash</div>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh bandit0@bandit.labs.overthewire.org -p <span class="m">2220</span></span></span></code></pre></div><p>Login password for Bandit Level 0:<br>
 <strong>bandit0</strong></p>
 <hr>
-<h2 id="solution--commands">
-  Solution / Commands
-  <a class="heading-link" href="#solution--commands">
+
+<h2 id="solutions--commands">
+  Solutions / Commands
+  
+  <a class="heading-link" href="#solutions--commands">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
-</h2>
-<p><em>Bash</em></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bandit0@bandit:~$ ls
-</span></span><span class="line"><span class="cl">bandit0@bandit:~$ cat readme
-</span></span></code></pre></div><hr>
-<h2 id="process-breakdown">
-  Process Breakdown
-  <a class="heading-link" href="#process-breakdown">
-    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<u><h3 id="step-1">
+  
+
+</h2><blockquote>
+<p>Note: You can view / hide lengthy explanation with buttons like <strong>&ldquo;Show/Hide All&rdquo;</strong>, or <strong>&ldquo;Show/Hide&rdquo;</strong> button at each step.</p>
+</blockquote>
+
+
+<div class="boxHScontain" id="box_hs">
+
+    
+    
+
+    <button class="toggleShowAll-button" onclick="toggleShowAll(this.id)" id="but_s-all">Show All</button>
+    <button class="toggleHideAll-button" onclick="toggleHideAll(this.id)" id="but_h-all">Hide All</button>
+
+    
+
+
+    
+</div>
+<u>
+<h3 id="step-1">
   Step 1
+  
   <a class="heading-link" href="#step-1">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
-</h3>
-</u>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ls
-</span></span></code></pre></div><p>Once login, we need to first find out what files is in the directory. <code>ls</code> command lists out all the <em>non-hidden</em> files in a directory. We see that only <strong>readme</strong> exists.</p>
+  
+
+</h3></u>
+<div class="fcode-language">bash</div>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bandit0@bandit:~$ ls</span></span></code></pre></div>
+
+<div class="boxHScontain" id="box_hsstep-1">
+
+    
+    
+
+    <button class="toggle-button" onclick="toggleHideShow(this.id)" id="but_hsstep-1">Show</button>
+    <div id="hsstep-1" class="hidden hiddentext">
+        <p>Once login, we need to first find out what files is in the directory. <code>ls</code> command lists out all the <em>non-hidden</em> files in a directory. We see that only <strong>readme</strong> exists.</p>
 <blockquote>
 <p>In Windows or Linux OS, files can be hidden by purposely introducing certain characters. Use <code>ls -la</code> command to lists out all files, including <em>non-hidden</em> files in a directory and the corresponding permissions.</p>
 </blockquote>
-<u><h3 id="step-2">
+
+    </div>
+
+     
+    
+
+
+    
+</div>
+<u>
+<h3 id="step-2">
   Step 2
+  
   <a class="heading-link" href="#step-2">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
-</h3>
-</u>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat readme
-</span></span></code></pre></div><p><code>cat</code> command displays the content in specified file. Use <code>cat readme</code> to display the content in the file named <strong>readme</strong>. The <strong>readme</strong> file happens to contain the login password for Bandit Level 1.</p>
+  
+
+</h3></u>
+<div class="fcode-language">bash</div>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bandit0@bandit:~$ cat readme</span></span></code></pre></div>
+
+<div class="boxHScontain" id="box_hsstep-2">
+
+    
+    
+
+    <button class="toggle-button" onclick="toggleHideShow(this.id)" id="but_hsstep-2">Show</button>
+    <div id="hsstep-2" class="hidden hiddentext">
+        <code>cat</code> command displays the content in specified file. Use <code>cat readme</code> to display the content in the file named <strong>&ldquo;readme&rdquo;</strong>. The <strong>&ldquo;readme&rdquo;</strong> file happens to contain the login password for Bandit Level 1.
+    </div>
+
+     
+    
+
+
+    
+</div>
 <hr>
-<h2 id="bandit-level-1-password">
+
+<h2 id="bandit-level-hahahugoshortcode16s10hbhb-password">
   Bandit Level 1 Password
-  <a class="heading-link" href="#bandit-level-1-password">
+  
+  <a class="heading-link" href="#bandit-level-hahahugoshortcode16s10hbhb-password">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
-</h2>
-<p>Login password is <style>
-    .inline-spoiler {
-        position: relative;
-        display: inline-block;
-        cursor: help;
-    }
+  
 
-    .inline-spoiler::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 1px;
-        color: white;
-        background: black;
-        opacity: 1;
-        transition: opacity 0.7s ease, transform 0.3s ease;
-    }
-
-    .inline-spoiler:hover::before {
-        opacity: 0;
-        transform: translateY(-50%)rotateX(80deg);
-        transition: opacity 1.0s ease, transform 0.5s ease;
-        transition-delay: 0.3s;
-    }
-</style>
-
-
+</h2><p>Login password is 
 
 
 
 
     
+    
+        
         
             
                 <span class="inline-spoiler"><b>ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If</b></span>
             
         
-            
         
             
+        
+        
+            
+        
+        
+            
+        
         
             
         
@@ -393,6 +454,11 @@ bandit0@bandit:~$ ls bandit0@bandit:~$ cat readme Process BreakdownLink to head
   <script src="/js/coder.js"></script>
   
 
+  
+  
+  
+  <script src="/js/customjs.js"></script>
+  
   
 
   
