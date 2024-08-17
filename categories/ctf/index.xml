@@ -27,7 +27,7 @@
       <link>http://localhost:1313/posts/overthewire/bandit/bandit-3/</link>
       <pubDate>Fri, 09 Aug 2024 17:46:34 +0800</pubDate>
       <guid>http://localhost:1313/posts/overthewire/bandit/bandit-3/</guid>
-      <description>Before you start&#xD;Link to heading&#xD;SSH command:&#xA;bash&#xD;ssh bandit2@bandit.labs.overthewire.org -p 2220Login password for Bandit Level 2:&#xA;263JGJPfgU6LtdEvgfWU1XP5yac29mFx&#xD;Solutions / Commands&#xD;Link to heading&#xD;Note: You can view / hide lengthy explanation with buttons like &amp;ldquo;Show/Hide All&amp;rdquo;, or &amp;ldquo;Show/Hide&amp;rdquo; button at each step.&#xA;Show All&#xD;Hide All&#xD;Step 1&#xD;Link to heading&#xD;bash&#xD;bandit2@bandit:~$ ls&#xD;Show&#xD;Once login, we need to first find out what files is in the directory.</description>
+      <description>Glossary Lookup: | Escape Character&#xD;Before you start&#xD;Link to heading&#xD;SSH command:&#xA;bash&#xD;ssh bandit2@bandit.labs.overthewire.org -p 2220Login password for Bandit Level 2:&#xA;263JGJPfgU6LtdEvgfWU1XP5yac29mFx&#xD;Solutions / Commands&#xD;Link to heading&#xD;Note: You can view / hide lengthy explanation with buttons like &amp;ldquo;Show/Hide All&amp;rdquo;, or &amp;ldquo;Show/Hide&amp;rdquo; button at each step.&#xA;Show All&#xD;Hide All&#xD;Step 1&#xD;Link to heading&#xD;bash&#xD;bandit2@bandit:~$ ls&#xD;Show&#xD;Once login, we need to first find out what files is in the directory.</description>
     </item>
     <item>
       <title>Bandit 3 - 4 Walkthrough</title>

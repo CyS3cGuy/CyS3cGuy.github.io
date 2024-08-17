@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Natas Walkthroughs on CyS3cGuy</title>
+    <link>http://localhost:1313/posts/overthewire/natas/</link>
+    <description>Recent content in Natas Walkthroughs on CyS3cGuy</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 13 Aug 2024 14:57:15 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/overthewire/natas/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Natas 27 - 28 Walkthrough</title>
+      <link>http://localhost:1313/posts/overthewire/natas/natas-28/</link>
+      <pubDate>Tue, 13 Aug 2024 14:57:15 +0800</pubDate>
+      <guid>http://localhost:1313/posts/overthewire/natas/natas-28/</guid>
+      <description>Note: You can view / hide lengthy explanation with buttons like &amp;ldquo;Show/Hide All&amp;rdquo;, or &amp;ldquo;Show/Hide&amp;rdquo; button at each step.&#xA;Show All&#xD;Hide All&#xD;Before you start&#xD;Link to heading&#xD;URL: natas27.natas.labs.overthewire.org&#xA;Login password for Natas Level 27:&#xA;u3RRffXjysjgwFU6b9xa23i6prmUsYne&#xD;Source Codes&#xD;Link to heading&#xD;Raw Codes&#xD;Link to heading&#xD;Click to show the given source codes for us to refer:&#xA;Show&#xD;php&#xD;&amp;lt;?php // morla / 10111 // database gets cleared every 5 min /* CREATE TABLE `users` ( `username` varchar(64) DEFAULT NULL, `password` varchar(64) DEFAULT NULL ); */ function checkCredentials($link,$usr,$pass){ $user=mysqli_real_escape_string($link, $usr); $password=mysqli_real_escape_string($link, $pass); $query = &amp;#34;SELECT username from users where username=&amp;#39;$user&amp;#39; and password=&amp;#39;$password&amp;#39; &amp;#34;; $res = mysqli_query($link, $query); if(mysqli_num_rows($res) &amp;gt; 0){ return True; } return False; } function validUser($link,$usr){ $user=mysqli_real_escape_string($link, $usr); $query = &amp;#34;SELECT * from users where username=&amp;#39;$user&amp;#39;&amp;#34;; $res = mysqli_query($link, $query); if($res) { if(mysqli_num_rows($res) &amp;gt; 0) { return True; } } return False; } function dumpData($link,$usr){ $user=mysqli_real_escape_string($link, trim($usr)); $query = &amp;#34;SELECT * from users where username=&amp;#39;$user&amp;#39;&amp;#34;; $res = mysqli_query($link, $query); if($res) { if(mysqli_num_rows($res) &amp;gt; 0) { while ($row = mysqli_fetch_assoc($res)) { // thanks to Gobo for reporting this bug!</description>
+    </item>
+  </channel>
+</rss>

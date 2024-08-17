@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  Natas 27 - 28 Walkthrough · CyS3cGuy
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="CyS3cGuy">
+<meta name="description" content="Note: You can view / hide lengthy explanation with buttons like &ldquo;Show/Hide All&rdquo;, or &ldquo;Show/Hide&rdquo; button at each step.
+Show AllHide AllBefore you startLink to headingURL: natas27.natas.labs.overthewire.org
+Login password for Natas Level 27:
+u3RRffXjysjgwFU6b9xa23i6prmUsYneSource CodesLink to headingRaw CodesLink to headingClick to show the given source codes for us to refer:
+Showphp&lt;?php // morla / 10111 // database gets cleared every 5 min /* CREATE TABLE `users` ( `username` varchar(64) DEFAULT NULL, `password` varchar(64) DEFAULT NULL ); */ function checkCredentials($link,$usr,$pass){ $user=mysqli_real_escape_string($link, $usr); $password=mysqli_real_escape_string($link, $pass); $query = &#34;SELECT username from users where username=&#39;$user&#39; and password=&#39;$password&#39; &#34;; $res = mysqli_query($link, $query); if(mysqli_num_rows($res) &gt; 0){ return True; } return False; } function validUser($link,$usr){ $user=mysqli_real_escape_string($link, $usr); $query = &#34;SELECT * from users where username=&#39;$user&#39;&#34;; $res = mysqli_query($link, $query); if($res) { if(mysqli_num_rows($res) &gt; 0) { return True; } } return False; } function dumpData($link,$usr){ $user=mysqli_real_escape_string($link, trim($usr)); $query = &#34;SELECT * from users where username=&#39;$user&#39;&#34;; $res = mysqli_query($link, $query); if($res) { if(mysqli_num_rows($res) &gt; 0) { while ($row = mysqli_fetch_assoc($res)) { // thanks to Gobo for reporting this bug!">
+<meta name="keywords" content="blog,cybersecurity,ctf,IT">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Natas 27 - 28 Walkthrough">
+  <meta name="twitter:description" content="Note: You can view / hide lengthy explanation with buttons like “Show/Hide All”, or “Show/Hide” button at each step.
+Show AllHide AllBefore you startLink to headingURL: natas27.natas.labs.overthewire.org
+Login password for Natas Level 27:
+u3RRffXjysjgwFU6b9xa23i6prmUsYneSource CodesLink to headingRaw CodesLink to headingClick to show the given source codes for us to refer:
+Showphp&lt;?php // morla / 10111 // database gets cleared every 5 min /* CREATE TABLE `users` ( `username` varchar(64) DEFAULT NULL, `password` varchar(64) DEFAULT NULL ); */ function checkCredentials($link,$usr,$pass){ $user=mysqli_real_escape_string($link, $usr); $password=mysqli_real_escape_string($link, $pass); $query = &#34;SELECT username from users where username=&#39;$user&#39; and password=&#39;$password&#39; &#34;; $res = mysqli_query($link, $query); if(mysqli_num_rows($res) &gt; 0){ return True; } return False; } function validUser($link,$usr){ $user=mysqli_real_escape_string($link, $usr); $query = &#34;SELECT * from users where username=&#39;$user&#39;&#34;; $res = mysqli_query($link, $query); if($res) { if(mysqli_num_rows($res) &gt; 0) { return True; } } return False; } function dumpData($link,$usr){ $user=mysqli_real_escape_string($link, trim($usr)); $query = &#34;SELECT * from users where username=&#39;$user&#39;&#34;; $res = mysqli_query($link, $query); if($res) { if(mysqli_num_rows($res) &gt; 0) { while ($row = mysqli_fetch_assoc($res)) { // thanks to Gobo for reporting this bug!">
+
+<meta property="og:url" content="http://localhost:1313/posts/overthewire/natas/natas-28/">
+  <meta property="og:site_name" content="CyS3cGuy">
+  <meta property="og:title" content="Natas 27 - 28 Walkthrough">
+  <meta property="og:description" content="Note: You can view / hide lengthy explanation with buttons like “Show/Hide All”, or “Show/Hide” button at each step.
+Show AllHide AllBefore you startLink to headingURL: natas27.natas.labs.overthewire.org
+Login password for Natas Level 27:
+u3RRffXjysjgwFU6b9xa23i6prmUsYneSource CodesLink to headingRaw CodesLink to headingClick to show the given source codes for us to refer:
+Showphp&lt;?php // morla / 10111 // database gets cleared every 5 min /* CREATE TABLE `users` ( `username` varchar(64) DEFAULT NULL, `password` varchar(64) DEFAULT NULL ); */ function checkCredentials($link,$usr,$pass){ $user=mysqli_real_escape_string($link, $usr); $password=mysqli_real_escape_string($link, $pass); $query = &#34;SELECT username from users where username=&#39;$user&#39; and password=&#39;$password&#39; &#34;; $res = mysqli_query($link, $query); if(mysqli_num_rows($res) &gt; 0){ return True; } return False; } function validUser($link,$usr){ $user=mysqli_real_escape_string($link, $usr); $query = &#34;SELECT * from users where username=&#39;$user&#39;&#34;; $res = mysqli_query($link, $query); if($res) { if(mysqli_num_rows($res) &gt; 0) { return True; } } return False; } function dumpData($link,$usr){ $user=mysqli_real_escape_string($link, trim($usr)); $query = &#34;SELECT * from users where username=&#39;$user&#39;&#34;; $res = mysqli_query($link, $query); if($res) { if(mysqli_num_rows($res) &gt; 0) { while ($row = mysqli_fetch_assoc($res)) { // thanks to Gobo for reporting this bug!">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-08-13T14:57:15+08:00">
+    <meta property="article:modified_time" content="2024-08-13T14:57:15+08:00">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/posts/overthewire/natas/natas-28/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+  
+    
+    <link rel="stylesheet" href="/css/ctf/sc_spoiler.css" media="screen">
+  
+
+  
+    
+    <link rel="stylesheet" href="/css/sc_hideshow.css" media="screen">
+  
+
+  
+    
+    <link rel="stylesheet" href="/css/fcblock_langindicator.css" media="screen">
+  
+
+  
+    
+    <link rel="stylesheet" href="/css/customstyle.css" media="screen">
+  
+
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-dark">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      CyS3cGuy
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/">Home</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/glossary/">Glossary</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Browse Contents</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <nav class="breadcrumb">
+    <ol style="padding: 0;">
+        
+        <li style="display: inline;">
+            <a href="/">Home</a>
+        </li>
+        <li style="display: inline">>></li>
+        
+        <li style="display: inline;">
+            <a href="/posts/">All Contents</a>
+        </li>
+        <li style="display: inline">>></li>
+        
+        <li style="display: inline;">
+            <a href="/posts/overthewire/">OverTheWire</a>
+        </li>
+        <li style="display: inline">>></li>
+        
+        <li style="display: inline;">
+            <a href="/posts/overthewire/natas/">Natas Walkthroughs</a>
+        </li>
+        <li style="display: inline">>></li>
+        
+        <li class="active" style="display: inline; color: grey">
+            Natas 27 - 28 Walkthrough
+        </li>
+    </ol>
+</nav>
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/posts/overthewire/natas/natas-28/">
+              Natas 27 - 28 Walkthrough
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2024-08-13T14:57:15&#43;08:00">
+                August 13, 2024
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              14-minute read
+            </span>
+          </div>
+          
+          
+          
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        
+
+<blockquote>
+<p>Note: You can view / hide lengthy explanation with buttons like <strong>&ldquo;Show/Hide All&rdquo;</strong>, or <strong>&ldquo;Show/Hide&rdquo;</strong> button at each step.</p>
+</blockquote>
+
+
+<div class="boxHScontain" id="box_hs">
+
+    
+    
+
+    <button class="toggleShowAll-button" onclick="toggleShowAll(this.id)" id="but_s-all">Show All</button>
+    <button class="toggleHideAll-button" onclick="toggleHideAll(this.id)" id="but_h-all">Hide All</button>
+
+    
+
+
+    
+</div>
+
+<h2 id="before-you-start">
+  Before you start
+  
+  <a class="heading-link" href="#before-you-start">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+  
+
+</h2><p>URL: <code>natas27.natas.labs.overthewire.org</code></p>
+<p>Login password for Natas Level 27:<br>
+
+
+
+
+
+    
+
+    
+    
+        
+        
+            
+                <span class="inline-spoiler"><b>u3RRffXjysjgwFU6b9xa23i6prmUsYne</b></span>
+            
+        
+        
+            
+        
+    
+</p>
+<hr>
+
+<h2 id="source-codes">
+  Source Codes
+  
+  <a class="heading-link" href="#source-codes">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+  
+
+</h2>
+<h3 id="raw-codes">
+  Raw Codes
+  
+  <a class="heading-link" href="#raw-codes">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+  
+
+</h3><p>Click to show the given source codes for us to refer:</p>
+
+
+<div class="boxHScontain" id="box_hssource-codes">
+
+    
+    
+
+    <button class="toggle-button" onclick="toggleHideShow(this.id)" id="but_hssource-codes">Show</button>
+    <div id="hssource-codes" class="hidden hiddentext">
+        <div class="fcode-language">php</div>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// morla / 10111
+</span></span></span><span class="line"><span class="cl"><span class="c1">// database gets cleared every 5 min
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">CREATE TABLE `users` (
+</span></span></span><span class="line"><span class="cl"><span class="cm">  `username` varchar(64) DEFAULT NULL,
+</span></span></span><span class="line"><span class="cl"><span class="cm">  `password` varchar(64) DEFAULT NULL
+</span></span></span><span class="line"><span class="cl"><span class="cm">);
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">function</span> <span class="nf">checkCredentials</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span><span class="nv">$usr</span><span class="p">,</span><span class="nv">$pass</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$user</span><span class="o">=</span><span class="nx">mysqli_real_escape_string</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span> <span class="nv">$usr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$password</span><span class="o">=</span><span class="nx">mysqli_real_escape_string</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span> <span class="nv">$pass</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$query </span><span class="o">=</span> <span class="s2">&#34;SELECT username from users where username=&#39;</span><span class="si">$user</span><span class="s2">&#39; and password=&#39;</span><span class="si">$password</span><span class="s2">&#39; &#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$res </span><span class="o">=</span> <span class="nx">mysqli_query</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span> <span class="nv">$query</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="nx">mysqli_num_rows</span><span class="p">(</span><span class="nv">$res</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">True</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">False</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">function</span> <span class="nf">validUser</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span><span class="nv">$usr</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$user</span><span class="o">=</span><span class="nx">mysqli_real_escape_string</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span> <span class="nv">$usr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$query </span><span class="o">=</span> <span class="s2">&#34;SELECT * from users where username=&#39;</span><span class="si">$user</span><span class="s2">&#39;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$res </span><span class="o">=</span> <span class="nx">mysqli_query</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span> <span class="nv">$query</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="nv">$res</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="nx">mysqli_num_rows</span><span class="p">(</span><span class="nv">$res</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="k">True</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">False</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">function</span> <span class="nf">dumpData</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span><span class="nv">$usr</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$user</span><span class="o">=</span><span class="nx">mysqli_real_escape_string</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span> <span class="nx">trim</span><span class="p">(</span><span class="nv">$usr</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$query </span><span class="o">=</span> <span class="s2">&#34;SELECT * from users where username=&#39;</span><span class="si">$user</span><span class="s2">&#39;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$res </span><span class="o">=</span> <span class="nx">mysqli_query</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span> <span class="nv">$query</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="nv">$res</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="nx">mysqli_num_rows</span><span class="p">(</span><span class="nv">$res</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">while</span> <span class="p">(</span><span class="nv">$row </span><span class="o">=</span> <span class="nx">mysqli_fetch_assoc</span><span class="p">(</span><span class="nv">$res</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">// thanks to Gobo for reporting this bug!
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="c1">//return print_r($row);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="k">return</span> <span class="nx">print_r</span><span class="p">(</span><span class="nv">$row</span><span class="p">,</span><span class="k">true</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">False</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">function</span> <span class="nf">createUser</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span> <span class="nv">$usr</span><span class="p">,</span> <span class="nv">$pass</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="nv">$usr </span><span class="o">!=</span> <span class="nx">trim</span><span class="p">(</span><span class="nv">$usr</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">echo</span> <span class="s2">&#34;Go away hacker&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">False</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$user</span><span class="o">=</span><span class="nx">mysqli_real_escape_string</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span> <span class="nx">substr</span><span class="p">(</span><span class="nv">$usr</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">64</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$password</span><span class="o">=</span><span class="nx">mysqli_real_escape_string</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span> <span class="nx">substr</span><span class="p">(</span><span class="nv">$pass</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">64</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$query </span><span class="o">=</span> <span class="s2">&#34;INSERT INTO users (username,password) values (&#39;</span><span class="si">$user</span><span class="s2">&#39;,&#39;</span><span class="si">$password</span><span class="s2">&#39;)&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$res </span><span class="o">=</span> <span class="nx">mysqli_query</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span> <span class="nv">$query</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="nx">mysqli_affected_rows</span><span class="p">(</span><span class="nv">$link</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">True</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">False</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="nx">array_key_exists</span><span class="p">(</span><span class="s2">&#34;username&#34;</span><span class="p">,</span> <span class="nv">$_REQUEST</span><span class="p">)</span> <span class="k">and</span> <span class="nx">array_key_exists</span><span class="p">(</span><span class="s2">&#34;password&#34;</span><span class="p">,</span> <span class="nv">$_REQUEST</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$link </span><span class="o">=</span> <span class="nx">mysqli_connect</span><span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="s1">&#39;natas27&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;censored&gt;&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">mysqli_select_db</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span> <span class="s1">&#39;natas27&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="nx">validUser</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s2">&#34;username&#34;</span><span class="p">]))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//user exists, check creds
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">if</span><span class="p">(</span><span class="nx">checkCredentials</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s2">&#34;username&#34;</span><span class="p">],</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s2">&#34;password&#34;</span><span class="p">])){</span>
+</span></span><span class="line"><span class="cl">            <span class="k">echo</span> <span class="s2">&#34;Welcome &#34;</span> <span class="o">.</span> <span class="nx">htmlentities</span><span class="p">(</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s2">&#34;username&#34;</span><span class="p">])</span> <span class="o">.</span> <span class="s2">&#34;!&lt;br&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">echo</span> <span class="s2">&#34;Here is your data:&lt;br&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$data</span><span class="o">=</span><span class="nx">dumpData</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s2">&#34;username&#34;</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">print</span> <span class="nx">htmlentities</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">echo</span> <span class="s2">&#34;Wrong password for user: &#34;</span> <span class="o">.</span> <span class="nx">htmlentities</span><span class="p">(</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s2">&#34;username&#34;</span><span class="p">])</span> <span class="o">.</span> <span class="s2">&#34;&lt;br&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//user doesn&#39;t exist
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">if</span><span class="p">(</span><span class="nx">createUser</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s2">&#34;username&#34;</span><span class="p">],</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s2">&#34;password&#34;</span><span class="p">])){</span>
+</span></span><span class="line"><span class="cl">            <span class="k">echo</span> <span class="s2">&#34;User &#34;</span> <span class="o">.</span> <span class="nx">htmlentities</span><span class="p">(</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s2">&#34;username&#34;</span><span class="p">])</span> <span class="o">.</span> <span class="s2">&#34; was created!&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">mysqli_close</span><span class="p">(</span><span class="nv">$link</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// The &#34;else&#34; output the HTML form and submit button for user&#39;s interaction
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// Omitted for tidiness purpose
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">?&gt;</span><span class="err">
+</span></span></span></code></pre></div>
+    </div>
+
+     
+    
+
+
+    
+</div>
+
+<h3 id="codes-explanation">
+  Codes Explanation
+  
+  <a class="heading-link" href="#codes-explanation">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+  
+
+</h3><p>Let us decipher the codes, starting from the &ldquo;Main&rdquo; function and we will then look at the details of the function in which the &ldquo;Main&rdquo; function use. Click to show explanation for different functions.</p>
+
+<h4 id="main-function">
+  Main() Function:
+  
+  <a class="heading-link" href="#main-function">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+  
+
+</h4>
+
+<div class="boxHScontain" id="box_hsmain-function">
+
+    
+    
+
+    <button class="toggle-button" onclick="toggleHideShow(this.id)" id="but_hsmain-function">Show</button>
+    <div id="hsmain-function" class="hidden hiddentext">
+        <p><strong>Section 1</strong></p>
+<div class="fcode-language">php</div>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="nx">array_key_exists</span><span class="p">(</span><span class="s2">&#34;username&#34;</span><span class="p">,</span> <span class="nv">$_REQUEST</span><span class="p">)</span> <span class="k">and</span> <span class="nx">array_key_exists</span><span class="p">(</span><span class="s2">&#34;password&#34;</span><span class="p">,</span> <span class="nv">$_REQUEST</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$link</span> <span class="o">=</span> <span class="nx">mysqli_connect</span><span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="s1">&#39;natas27&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;censored&gt;&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">mysqli_select_db</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span> <span class="s1">&#39;natas27&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Refer to code logic at Section 2 and 3.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// Execute the code logic
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="nx">mysqli_close</span><span class="p">(</span><span class="nv">$link</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// The &#34;else&#34; output the HTML form and submit button for user&#39;s interaction
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// Omitted for tidiness purpose
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span></span></span></code></pre></div><p>This is to connect to a MySQL DB named <strong>&ldquo;natas27&rdquo;</strong>, provided that the <strong>&ldquo;username&rdquo;</strong> and <strong>&ldquo;password&rdquo;</strong> fields in the HTML form are filled up. Once connected, it will execute some code logics in next few sections and then close the MySQL connection.</p>
+<p>the <strong>&ldquo;username&rdquo;</strong> and <strong>&ldquo;password&rdquo;</strong> fields in the HTML form are blank when submitted, the code will output the HTML form again for user&rsquo;s interaction.</p>
+<p><strong>Section 2</strong></p>
+<div class="fcode-language">php</div>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="nx">validUser</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s2">&#34;username&#34;</span><span class="p">]))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 3rd Section Code Logic
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// Do some code logic
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// user exists, check creds
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// The explanation of this code logic has been moved to Section 3
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span><span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//user doesn&#39;t exist
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">if</span><span class="p">(</span><span class="nx">createUser</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s2">&#34;username&#34;</span><span class="p">],</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s2">&#34;password&#34;</span><span class="p">])){</span>
+</span></span><span class="line"><span class="cl">            <span class="k">echo</span> <span class="s2">&#34;User &#34;</span> <span class="o">.</span> <span class="nx">htmlentities</span><span class="p">(</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s2">&#34;username&#34;</span><span class="p">])</span> <span class="o">.</span> <span class="s2">&#34; was created!&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span></span></span></code></pre></div><p>Once connected to DB, the code will trigger the <a href="#validuser-function" >function</a> <code>validUser()</code>. From the function name, it seems like it checks if the user exists. This function return a boolean true or false. If true, then it will perform code logic at <em>Section 3</em>, else it will trigger another <a href="#createuser-function" >function</a> <code>createUser()</code> and output the user creation message.</p>
+<p><strong>Section 3</strong></p>
+<div class="fcode-language">php</div>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="nx">checkCredentials</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s2">&#34;username&#34;</span><span class="p">],</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s2">&#34;password&#34;</span><span class="p">])){</span>
+</span></span><span class="line"><span class="cl">            <span class="k">echo</span> <span class="s2">&#34;Welcome &#34;</span> <span class="o">.</span> <span class="nx">htmlentities</span><span class="p">(</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s2">&#34;username&#34;</span><span class="p">])</span> <span class="o">.</span> <span class="s2">&#34;!&lt;br&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">echo</span> <span class="s2">&#34;Here is your data:&lt;br&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$data</span><span class="o">=</span><span class="nx">dumpData</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s2">&#34;username&#34;</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">print</span> <span class="nx">htmlentities</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">echo</span> <span class="s2">&#34;Wrong password for user: &#34;</span> <span class="o">.</span> <span class="nx">htmlentities</span><span class="p">(</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s2">&#34;username&#34;</span><span class="p">])</span> <span class="o">.</span> <span class="s2">&#34;&lt;br&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span></span></span></code></pre></div><p>Continuing from previous section, if <a href="#validuser-function" >function</a> <code>validUser()</code> returns true, it will proceed to trigger another <a href="#checkcredentials-function" >function</a> <code>checkCredentials()</code>. This function, based on the name, supposedly check if the password is correct before returning boolean true or false.</p>
+<p>If true, the codes will display some data as HTML elements. Another <a href="#dumpdata-function" >function</a> <code>dumpData()</code> is presumably displaying the data related to the <strong>&ldquo;username&rdquo;</strong> from DB.</p>
+<p>If false, the codes will display warning message that the password is wrong.</p>
+
+    </div>
+
+     
+    
+
+
+    
+</div>
+
+<h4 id="validuser-function">
+  validUser() Function:
+  
+  <a class="heading-link" href="#validuser-function">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+  
+
+</h4>
+
+<div class="boxHScontain" id="box_hsvaliduser-function">
+
+    
+    
+
+    <button class="toggle-button" onclick="toggleHideShow(this.id)" id="but_hsvaliduser-function">Show</button>
+    <div id="hsvaliduser-function" class="hidden hiddentext">
+        <p><strong>Section 1</strong></p>
+<div class="fcode-language">php</div>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">function</span> <span class="nf">validUser</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span><span class="nv">$usr</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$user</span><span class="o">=</span><span class="nx">mysqli_real_escape_string</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span> <span class="nv">$usr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$query</span> <span class="o">=</span> <span class="s2">&#34;SELECT * from users where username=&#39;</span><span class="si">$user</span><span class="s2">&#39;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$res</span> <span class="o">=</span> <span class="nx">mysqli_query</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span> <span class="nv">$query</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="nv">$res</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="nx">mysqli_num_rows</span><span class="p">(</span><span class="nv">$res</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="k">True</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">False</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div><p>This function takes in 2 arguments, <code>$link</code> and <code>$usr</code>. Looking back at the <a href="#main-function" >function</a> <code>main</code>:</p>
+<ul>
+<li><code>$link</code> refers to the MySQL connection itself</li>
+<li><code>$usr</code> refers to the raw username input data passed from HTTP request</li>
+</ul>
+<p><strong>Section 2</strong></p>
+<div class="fcode-language">php</div>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl">    <span class="nv">$user</span><span class="o">=</span><span class="nx">mysqli_real_escape_string</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span> <span class="nv">$usr</span><span class="p">);</span></span></span></code></pre></div><p>The first thing the code does is to escape any harmful characters from the <code>$usr</code> argument using the MySQL built in escape function <code>mysqli_real_escape_string</code> (which is the best practice). So we know SQL injection is practically impossible for this circumstance.</p>
+<p><strong>Section 3</strong></p>
+<div class="fcode-language">php</div>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl">    <span class="nv">$query</span> <span class="o">=</span> <span class="s2">&#34;SELECT * from users where username=&#39;</span><span class="si">$user</span><span class="s2">&#39;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$res</span> <span class="o">=</span> <span class="nx">mysqli_query</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span> <span class="nv">$query</span><span class="p">);</span></span></span></code></pre></div><p>Then the code crafts SQL query and call against MySQL. This code essentially fetch all the rows related to a user which has the username named <code>$user</code>. However, the <code>$query</code> parameter seems safe as it properly escape any harmful characters, plus <code>$user</code> is within single quotes, making it almost impossible for SQL injection.</p>
+<p><strong>Section 4</strong></p>
+<div class="fcode-language">php</div>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="nv">$res</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="nx">mysqli_num_rows</span><span class="p">(</span><span class="nv">$res</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="k">True</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">False</span><span class="p">;</span></span></span></code></pre></div><p>If there is at least 1 row of result, return boolean True, else return False.</p>
+<p><strong>Summary</strong></p>
+<p>This function looks normal and may not be injectable.</p>
+
+    </div>
+
+     
+    
+
+
+    
+</div>
+
+<h4 id="checkcredentials-function">
+  checkCredentials() Function:
+  
+  <a class="heading-link" href="#checkcredentials-function">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+  
+
+</h4>
+
+<div class="boxHScontain" id="box_hscheckcredentials-function">
+
+    
+    
+
+    <button class="toggle-button" onclick="toggleHideShow(this.id)" id="but_hscheckcredentials-function">Show</button>
+    <div id="hscheckcredentials-function" class="hidden hiddentext">
+        <p><strong>Section 1</strong></p>
+<div class="fcode-language">php</div>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">function</span> <span class="nf">checkCredentials</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span><span class="nv">$usr</span><span class="p">,</span><span class="nv">$pass</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$user</span><span class="o">=</span><span class="nx">mysqli_real_escape_string</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span> <span class="nv">$usr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$password</span><span class="o">=</span><span class="nx">mysqli_real_escape_string</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span> <span class="nv">$pass</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$query</span> <span class="o">=</span> <span class="s2">&#34;SELECT username from users where username=&#39;</span><span class="si">$user</span><span class="s2">&#39; and password=&#39;</span><span class="si">$password</span><span class="s2">&#39; &#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$res</span> <span class="o">=</span> <span class="nx">mysqli_query</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span> <span class="nv">$query</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="nx">mysqli_num_rows</span><span class="p">(</span><span class="nv">$res</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">True</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">False</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div><p>This function takes in 3 arguments, <code>$link</code>, <code>$usr</code> and <code>$pass</code>. This function is strikingly similar to <a href="#validuser-function" >function</a> <code>validUser()</code>, with the addition of <code>$pass</code>. :</p>
+<ul>
+<li><code>$link</code> refers to the MySQL connection itself</li>
+<li><code>$usr</code> refers to the raw username input data passed from HTTP request</li>
+<li><code>$pass</code> refers to the raw password input data passed from HTTP request</li>
+</ul>
+<p>All inputs are properly sanitised/escaped and the arguments are single-quoted in the MySQL query.</p>
+<p>Refer to <a href="#validuser-function" >function</a> <code>validUser()</code> for individual line explanation. Not going to repeat the same thing.</p>
+<p><strong>Summary</strong></p>
+<p>This function looks normal and may not be injectable.</p>
+
+    </div>
+
+     
+    
+
+
+    
+</div>
+
+<h4 id="createuser-function">
+  createUser() Function:
+  
+  <a class="heading-link" href="#createuser-function">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+  
+
+</h4>
+
+<div class="boxHScontain" id="box_hscreateuser-function">
+
+    
+    
+
+    <button class="toggle-button" onclick="toggleHideShow(this.id)" id="but_hscreateuser-function">Show</button>
+    <div id="hscreateuser-function" class="hidden hiddentext">
+        <p><strong>Section 1</strong></p>
+<div class="fcode-language">php</div>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">function</span> <span class="nf">createUser</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span> <span class="nv">$usr</span><span class="p">,</span> <span class="nv">$pass</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="nv">$usr</span> <span class="o">!=</span> <span class="nx">trim</span><span class="p">(</span><span class="nv">$usr</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">echo</span> <span class="s2">&#34;Go away hacker&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">False</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$user</span><span class="o">=</span><span class="nx">mysqli_real_escape_string</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span> <span class="nx">substr</span><span class="p">(</span><span class="nv">$usr</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">64</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$password</span><span class="o">=</span><span class="nx">mysqli_real_escape_string</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span> <span class="nx">substr</span><span class="p">(</span><span class="nv">$pass</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">64</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$query</span> <span class="o">=</span> <span class="s2">&#34;INSERT INTO users (username,password) values (&#39;</span><span class="si">$user</span><span class="s2">&#39;,&#39;</span><span class="si">$password</span><span class="s2">&#39;)&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$res</span> <span class="o">=</span> <span class="nx">mysqli_query</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span> <span class="nv">$query</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="nx">mysqli_affected_rows</span><span class="p">(</span><span class="nv">$link</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">True</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">False</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div><p>This function takes in 3 arguments, <code>$link</code>, <code>$usr</code> and <code>$pass</code>.</p>
+<ul>
+<li><code>$link</code> refers to the MySQL connection itself</li>
+<li><code>$usr</code> refers to the raw username input data passed from HTTP request</li>
+<li><code>$pass</code> refers to the raw password input data passed from HTTP request</li>
+</ul>
+<p><strong>Section 2</strong></p>
+<div class="fcode-language">php</div>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="nv">$usr</span> <span class="o">!=</span> <span class="nx">trim</span><span class="p">(</span><span class="nv">$usr</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">echo</span> <span class="s2">&#34;Go away hacker&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">False</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span></span></span></code></pre></div><p><code>trim</code> function trims any leading or trailing whitespaces. For example, if we have a string with whitespaces named <strong>&quot;    cats   &quot;</strong>, <code>trim</code> will output <strong>&ldquo;cats&rdquo;</strong>. So this code basically takes the raw username input, trim the input and compare the raw username input with the trimmed input. If there is any difference, display <strong>&ldquo;Go away hacker&rdquo;</strong>.</p>
+<p>Interesting! This may give us a hint into exploiting. So it seems that this level is about exploiting the whitespace and we have to try to bypass check.</p>
+<p><strong>Section 2</strong></p>
+<div class="fcode-language">php</div>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl">    <span class="nv">$user</span><span class="o">=</span><span class="nx">mysqli_real_escape_string</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span> <span class="nx">substr</span><span class="p">(</span><span class="nv">$usr</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">64</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$password</span><span class="o">=</span><span class="nx">mysqli_real_escape_string</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span> <span class="nx">substr</span><span class="p">(</span><span class="nv">$pass</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">64</span><span class="p">));</span></span></span></code></pre></div><p>The raw username and password inputs are sanitised/escaped using the usual <code>mysqli_real_escape_string</code> function, but we noticed that instead of inputting full <code>$usr</code> and <code>$pass</code> string values into the escape function, the code only takes the first 64 characters, escape the characters and pass into the next function for further processing.</p>
+<p>By now, we should start be suspicious about the code. Why does it want to detect any whitespace and prevent us from using the whitespace? Why does the code only takes in the first 64 characters?</p>
+<p><strong>Section 3</strong></p>
+<div class="fcode-language">php</div>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl">    <span class="nv">$query</span> <span class="o">=</span> <span class="s2">&#34;INSERT INTO users (username,password) values (&#39;</span><span class="si">$user</span><span class="s2">&#39;,&#39;</span><span class="si">$password</span><span class="s2">&#39;)&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$res</span> <span class="o">=</span> <span class="nx">mysqli_query</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span> <span class="nv">$query</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="nx">mysqli_affected_rows</span><span class="p">(</span><span class="nv">$link</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">True</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">False</span><span class="p">;</span></span></span></code></pre></div><p>The substring <code>$user</code> and <code>$password</code> is then passed into MySQL query to call against. Once again, single quotes are used.</p>
+<p>If there is any new row added (indicated by <code>mysqli_affected_rows</code> function), it will return boolean True, else False.</p>
+<p><strong>Summary</strong>
+We start to get a weird feeling of why the codes tries to prevent us from using whitespace and taking maximum 64 characters.</p>
+
+    </div>
+
+     
+    
+
+
+    
+</div>
+
+<h4 id="dumpdata-function">
+  dumpData() Function:
+  
+  <a class="heading-link" href="#dumpdata-function">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+  
+
+</h4>
+
+<div class="boxHScontain" id="box_hsdumpdata-function">
+
+    
+    
+
+    <button class="toggle-button" onclick="toggleHideShow(this.id)" id="but_hsdumpdata-function">Show</button>
+    <div id="hsdumpdata-function" class="hidden hiddentext">
+        <p><strong>Section 1</strong></p>
+<div class="fcode-language">php</div>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">function</span> <span class="nf">dumpData</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span><span class="nv">$usr</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$user</span><span class="o">=</span><span class="nx">mysqli_real_escape_string</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span> <span class="nx">trim</span><span class="p">(</span><span class="nv">$usr</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$query</span> <span class="o">=</span> <span class="s2">&#34;SELECT * from users where username=&#39;</span><span class="si">$user</span><span class="s2">&#39;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$res</span> <span class="o">=</span> <span class="nx">mysqli_query</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span> <span class="nv">$query</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="nv">$res</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="nx">mysqli_num_rows</span><span class="p">(</span><span class="nv">$res</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">while</span> <span class="p">(</span><span class="nv">$row</span> <span class="o">=</span> <span class="nx">mysqli_fetch_assoc</span><span class="p">(</span><span class="nv">$res</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">// thanks to Gobo for reporting this bug!
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="c1">//return print_r($row);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="k">return</span> <span class="nx">print_r</span><span class="p">(</span><span class="nv">$row</span><span class="p">,</span><span class="k">true</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">False</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div><p>This function takes in 2 arguments, <code>$link</code> and <code>usr</code></p>
+<ul>
+<li><code>$link</code> refers to the MySQL connection itself</li>
+<li><code>$usr</code> refers to the raw username input data passed from HTTP request</li>
+</ul>
+<p><strong>Section 2</strong></p>
+<div class="fcode-language">php</div>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$user</span><span class="o">=</span><span class="nx">mysqli_real_escape_string</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span> <span class="nx">trim</span><span class="p">(</span><span class="nv">$usr</span><span class="p">));</span></span></span></code></pre></div><p>It trims the raw username inputs (i.e. remove any leading and trailing whitespaces) and pass into escape function.</p>
+<p><strong>Section 3</strong></p>
+<div class="fcode-language">php</div>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl">    <span class="nv">$query</span> <span class="o">=</span> <span class="s2">&#34;SELECT * from users where username=&#39;</span><span class="si">$user</span><span class="s2">&#39;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$res</span> <span class="o">=</span> <span class="nx">mysqli_query</span><span class="p">(</span><span class="nv">$link</span><span class="p">,</span> <span class="nv">$query</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="nv">$res</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="nx">mysqli_num_rows</span><span class="p">(</span><span class="nv">$res</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">while</span> <span class="p">(</span><span class="nv">$row</span> <span class="o">=</span> <span class="nx">mysqli_fetch_assoc</span><span class="p">(</span><span class="nv">$res</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">// thanks to Gobo for reporting this bug!
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="c1">//return print_r($row);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="k">return</span> <span class="nx">print_r</span><span class="p">(</span><span class="nv">$row</span><span class="p">,</span><span class="k">true</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">False</span><span class="p">;</span></span></span></code></pre></div><p>It&rsquo;s a long one but pretty simple. It passes the escaped + trimmed <code>$user</code> variable into the MySQL query and call against MySQL to get all the rows relevant to the <code>$user</code>. If there is at least 1 row available, return the first row result only.</p>
+<p><strong>Summary</strong>
+This function essentially trims off the whitespaces from username input, then call the MySQL to fetch the first row of data related to the users.</p>
+
+    </div>
+
+     
+    
+
+
+    
+</div>
+
+<h4 id="summary-code-behaviour">
+  Summary Code Behaviour:
+  
+  <a class="heading-link" href="#summary-code-behaviour">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+  
+
+</h4>
+
+<div class="boxHScontain" id="box_hssummary-code-behaviour">
+
+    
+    
+
+    <button class="toggle-button" onclick="toggleHideShow(this.id)" id="but_hssummary-code-behaviour">Show</button>
+    <div id="hssummary-code-behaviour" class="hidden hiddentext">
+        <p>The general code behaviour can be summarised below:</p>
+<p><img src="natas28-codebehaviourfc.svg" alt="Code Behaviour Summary Flow Chart"></p>
+
+    </div>
+
+     
+    
+
+
+    
+</div>
+<hr>
+
+<h2 id="solutions--commands">
+  Solutions / Commands
+  
+  <a class="heading-link" href="#solutions--commands">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+  
+
+</h2><u>
+<h3 id="step-1">
+  Step 1
+  
+  <a class="heading-link" href="#step-1">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+  
+
+</h3></u>
+<p>Verify that <strong>&ldquo;natas28&rdquo;</strong> is a valid username.</p>
+<p>Username: <code>natas28</code><br>
+Password: <code>&lt;any password&gt;</code></p>
+<p>Expected output after submit: <strong>&ldquo;Wrong password for user: natas28&rdquo;</strong></p>
+
+
+<div class="boxHScontain" id="box_hsstep-1">
+
+    
+    
+
+    <button class="toggle-button" onclick="toggleHideShow(this.id)" id="but_hsstep-1">Show</button>
+    <div id="hsstep-1" class="hidden hiddentext">
+        <p>The very first step is of course to check if there is a username called <strong>&ldquo;natas28&rdquo;</strong>, as this username is of our interest and we need to get its password.</p>
+<p>If there is such username, it will not create new user. But instead, it will check for whether the password is correct. We know for now that we do not know the password, but we just want to confirm that this user exists.</p>
+<p>As long as we manage to get the warning message that says <strong>&ldquo;Wrong password for user: natas28&rdquo;</strong>, we can confirm this user exist.</p>
+
+    </div>
+
+     
+    
+
+
+    
+</div>
+<u>
+<h3 id="step-2">
+  Step 2
+  
+  <a class="heading-link" href="#step-2">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+  
+
+</h3></u>
+<p>Create a new user with a maliciously modified username that has more than 64 characters, with at least 57 whitespaces trailing behind <strong>&ldquo;natas28&rdquo;</strong> and any characters thereafter. The password can be any password (in this case, we use <strong>&ldquo;admin&rdquo;</strong> as the password for newly created username).</p>
+<p>Username: <code>natas28                                                         b</code><br>
+Password: <code>admin</code></p>
+<p>Expected output after submit: <strong>&ldquo;User natas28 b was created!&rdquo;</strong></p>
+
+
+<div class="boxHScontain" id="box_hsstep-2">
+
+    
+    
+
+    <button class="toggle-button" onclick="toggleHideShow(this.id)" id="but_hsstep-2">Show</button>
+    <div id="hsstep-2" class="hidden hiddentext">
+        <p>Now we know <strong>&ldquo;natas28&rdquo;</strong> username exists.</p>
+<p>Next, we need to recognise what can be exploited. By looking at the source codes provided, we notice that:</p>
+<ul>
+<li><a href="#createuser-function" >function</a> <code>createUser()</code> creates user that do not allow leading and trailing whitespaces, plus the code will truncate any string longer than 64 characters to exactly 64 characters.</li>
+<li><a href="#dumpdata-function" >function</a> <code>dumpData()</code> will first trim the raw input username off any leading or trailing whitespaces, and display data pertaining to the username.</li>
+</ul>
+<p>Our intention is to trick Natas website to provide us the data for <strong>&ldquo;natas28&rdquo;</strong> by exploiting its <code>trim</code> and <code>substr</code> mechanism. For that, we have to create a new user whose username is still <strong>&ldquo;natas28&rdquo;</strong> but with a lot of whitespaces behind. The codes will <em>stupidly</em> and <em>wrongly</em> handle our username input by trimming off the whitespace and display the data for the original user instead.</p>
+<p>Our general exploitation idea would be:</p>
+<ol>
+<li>We have to bypass the <em>trim</em> validation in <code>createUser()</code>. So we create a user in which the username would be <strong>&ldquo;natas28 + a very very long whitespaces (the number of whitespace characters have to be sufficiently long. In overall, together with the 7 ASCII characters provided by &ldquo;natas28&rdquo;, we need at least 57 whitespace characters to reach at least 64 characters) + any trailing characters (preferably ASCII/alphabets)&rdquo;</strong>.</li>
+</ol>
+<blockquote>
+<p>The reason why we want to have trailing ASCII / alphabets rather than whitespace is due to how <code>createUser()</code> function handle new user creation. It will check if there is any leading or trailing whitespaces. If yes, it won&rsquo;t proceed with user creation. If we have at least 1 ASCII/alphabet behind, the whitespaces are not considered trailing.</p>
+</blockquote>
+<ol start="2">
+<li>Even though our newly created username may be longer than 64 characters, but remember that in <code>createUser()</code> function, once we pass the <em>trim</em> validation, the <code>substr</code> function is used to truncate the string to exactly 64 characters. So which means now the alphabets which is at the end of the username will be truncated as it is not part of the 64 characters. Therefore the final username that will be registered in DB would only be <strong>&ldquo;natas28 + 57 whitespace characters&rdquo;</strong>.</li>
+</ol>
+<blockquote>
+<p>Note: &ldquo;natas28&rdquo; and &ldquo;natas28      &rdquo; are not the same user in the context of MySQL. Each of them has their own separate entry.</p>
+</blockquote>
+<p>At this stage, we have successfully create a malicious username and we will exploit it in next step.</p>
+
+    </div>
+
+     
+    
+
+
+    
+</div>
+<u>
+<h3 id="step-3">
+  Step 3
+  
+  <a class="heading-link" href="#step-3">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+  
+
+</h3></u>
+<p>Login with the newly created username (i.e. <strong>&ldquo;natas28&rdquo;</strong> + 57 trailing whitespace), with the password created.</p>
+<blockquote>
+<p>Note: Your input <strong>MUST</strong> be exactly <strong>&ldquo;natas28&rdquo; + 57 trailing whitespace</strong>, <em><strong>DO NOT</strong></em> include the additional characters trailing behind the whitespace.</p>
+<p><strong>&ldquo;natas28&rdquo; + 57 trailing whitespace</strong> are in total 64 characters.</p>
+</blockquote>
+<p>Username: <code>natas28                                                         </code><br>
+Password: <code>admin</code></p>
+<p>Expected output after submit:</p>
+<p><strong>&ldquo;Welcome natas28 !<br>
+Here is your data:<br>
+Array ( [username] =&gt;<br>
+natas28 [password] =&gt;</strong> <em><strong>&lt;next level password&gt;&rdquo;</strong></em></p>
+
+
+<div class="boxHScontain" id="box_hsstep-3">
+
+    
+    
+
+    <button class="toggle-button" onclick="toggleHideShow(this.id)" id="but_hsstep-3">Show</button>
+    <div id="hsstep-3" class="hidden hiddentext">
+        <p>Once we create a username that is <strong>&ldquo;natas28 + 57 whitespace characters&rdquo;</strong>, we can start exploit. If we look at our <a href="#dumpdata-function" >function</a> <code>dumpData()</code>, this function trims off leading and trailing whitespaces from our raw input username.</p>
+<p>So what this means is that, we got to play around with the <strong>&ldquo;Username&rdquo;</strong> field in HTML form. What value should we put inside the field so that <code>dumpData()</code> will trim off whitespaces from our input username and display <strong>&ldquo;natas28&rdquo;</strong> data?</p>
+<p>But here is a catch. When we submit the form, the code does not directly skip to <code>dumpData()</code> function to trim off our input and display data. It goes into <a href="#validuser-function" >function</a> <code>validUser()</code> and <a href="#checkcredentials-function" >function</a> <code>checkCredentials()</code>. Worse still, if we provide wrong input, it will go into creating a new user again using <a href="#createuser-function" >function</a> <code>createUser()</code>. We got to be precise enough in our input to trick Natas, bypassing the initial check and get to the <code>dumpData()</code> function to trim off our input username.</p>
+<p>Let&rsquo;s go through the thought process and code logic:</p>
+<ol>
+<li>The first function it goes through is <code>validUser()</code>. It basically checks if our input username matches any of the entries in MySQL. Note from Step 2, we have established the fact that <strong>&ldquo;natas28&rdquo;</strong> is different from <strong>&ldquo;natas28&rdquo;</strong> with trailing whitespaces. Even <strong>&ldquo;natas28&rdquo;</strong> with 2 trailing whitespaces is different from <strong>&ldquo;natas28&rdquo;</strong> with 3 trailing whitespaces. So we have to be careful with that.</li>
+<li>With point (1) in mind, we got to provide a valid user. How about the user that we just created, i.e. <strong>&ldquo;natas28&rdquo; + 57 trailing whitespaces</strong>? That is a valid user in MySQL entry. <strong>&ldquo;natas28&rdquo;</strong> is also a valid user. But what happens after we input either <strong>&ldquo;natas28&rdquo;</strong> or <strong>&ldquo;natas28&rdquo; + 57 trailing whitespaces</strong>?</li>
+<li>It will then go into <code>checkCredentials()</code> function. This function checks if the password is correct.
+<ul>
+<li>We do not know the password for <strong>&ldquo;natas28&rdquo;</strong>, so it will always flag <em>Wrong Password</em> warning message.</li>
+<li>We know the password for <strong>&ldquo;natas28&rdquo; + 57 trailing whitespaces</strong>. After all, it was the user that we have created. Although initially we intend to create a user named <strong>&ldquo;natas28&rdquo; + lots of trailing whitespaces + a few ASCII/alphabets</strong>, it does not matter anymore because <code>createUser()</code> initially already truncate our input username to exactly 64 characters using <code>substr</code> when we registered our user.</li>
+</ul>
+</li>
+<li>What happens after <code>checkCredentials()</code> function, if passed, it will then go into <code>dumpData()</code> function. Remember we input <strong>&ldquo;natas28&rdquo; + 57 trailing whitespaces</strong> into the <strong>&ldquo;Username&rdquo;</strong> field? The first thing that <code>dumpData()</code> function do is to trim off whitespaces from our input username. So in the end, the username becomes <strong>&ldquo;natas28&rdquo;</strong> only - all 57 trailing whitespaces are removed!</li>
+</ol>
+<p>The final <strong>&ldquo;natas28&rdquo;</strong> is then pushed into MySQL query to display the data that we need.</p>
+
+    </div>
+
+     
+    
+
+
+    
+</div>
+<hr>
+
+<h2 id="natas-level-hahahugoshortcode22s18hbhb-password">
+  Natas Level 28 Password
+  
+  <a class="heading-link" href="#natas-level-hahahugoshortcode22s18hbhb-password">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+  
+
+</h2><p>Login password is 
+
+
+
+
+    
+
+    
+    
+        
+        
+            
+        
+        
+            
+                <span class="inline-spoiler"><b>1JNwQM1Oi6J6j1k49Xyw7ZN6pXMQInVj</b></span>
+            
+        
+    
+</p>
+
+      </div>
+
+      <div class="nextprev" style="display:flex; justify-content: space-between;">
+        
+
+
+
+
+
+<div class="next">
+  
+</div>
+
+
+<div class="prev">
+  
+</div>
+
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  </section>
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2024
+     CyS3cGuy 
+    
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+  
+  
+  <script src="/js/customjs.js"></script>
+  
+  
+
+  
+
+
+  
+  
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

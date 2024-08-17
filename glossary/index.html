@@ -160,7 +160,7 @@ Glossary · CyS3cGuy
     <div class="content">
       
 
-<section class="container list">
+<section class="container">
   <header>
     <h1 class="title">
       <a class="title-link" href="http://localhost:1313/glossary/">
@@ -183,8 +183,7 @@ Glossary · CyS3cGuy
         <span class="sr-only">Link to heading</span>
       </a>
     </h3>
-    <p>Directory is a IT-term for &ldquo;Folder&rdquo;. If I say &ldquo;Navigate to DirA directory&rdquo;, in GUI-based term, it means that I&rsquo;m asking you to double click on the folder named &ldquo;DirA&rdquo; and open it.</p>
-
+    <div>Directory is a IT-term for &ldquo;Folder&rdquo;. If I say &ldquo;Navigate to DirA directory&rdquo;, in GUI-based term, it means that I&rsquo;m asking you to double click on the folder named &ldquo;DirA&rdquo; and open it.</div>
   </div>
 
 
@@ -197,7 +196,7 @@ Glossary · CyS3cGuy
         <span class="sr-only">Link to heading</span>
       </a>
     </h3>
-    <p>Escaping a character means adding a special prefix (often a backslash ) before a character to indicate that it should be treated differently than it normally would be in a given context, such as in a string, a regular expression, in URL, or in HTML.</p>
+    <div><p>Escaping a character means adding a special prefix (often a backslash ) before a character to indicate that it should be treated differently than it normally would be in a given context, such as in a string, a regular expression, in URL, or in HTML.</p>
 <p>For example, in URL, &ldquo;%&rdquo; is treated as a special character, because if the URL has &ldquo;%&rdquo;, it will do an operation called <em>URL encoding</em>. Examples of URL encoding:</p>
 <ul>
 <li>%21 is exclaimation mark (!)</li>
@@ -206,7 +205,7 @@ Glossary · CyS3cGuy
 <li>%25 is percent sign (%)</li>
 </ul>
 <p>But what if we really need %? We can escape the % by introducing the &ldquo;%&rdquo; URL encoding, which is &ldquo;%25&rdquo;. So for example, if our URL somehow needs to be <a href="http://example.com/%25kipling"  class="external-link" target="_blank" rel="noopener">http://example.com/%kipling</a>, then we can escape the &ldquo;%&rdquo; by making the URL <a href="http://example.com/%25kipling"  class="external-link" target="_blank" rel="noopener">http://example.com/%25kipling</a>. So URL will parse &ldquo;%25&rdquo; as &ldquo;%&rdquo; and revert back to original URL.</p>
-
+</div>
   </div>
 
 
@@ -219,11 +218,148 @@ Glossary · CyS3cGuy
         <span class="sr-only">Link to heading</span>
       </a>
     </h3>
-    <p>Printable characters are characters that a human can interpret. The fact that you are able to read this glossary page and all other pages is because the words or characters/alphabets make sense to you.</p>
+    <div><p>Printable characters are characters that a human can interpret. The fact that you are able to read this glossary page and all other pages is because the words or characters/alphabets make sense to you.</p>
 <p>Unprintable characters, on the other hand, are characters which a human won&rsquo;t be able to interpret. There are actually a lot of unprintable characters, some of which we may already came across yet we are ignorant. For example, &quot; &quot; (whitespace), &quot;    &quot; (tab), are unprintable characters. If you have an executable file (i.e. .exe file), try open it in Notepad and you will see a lot of junk characters (represented by some weird symbols or simply &ldquo;?&rdquo;) which do not make sense to a human.</p>
 <p>The reason unprintable characters exist is because computers read characters very differently compared to human. Computers read data in binary 0 and 1 only. For example, a human can easily recognise &lsquo;A&rsquo;, but computers interpret &lsquo;A&rsquo; as a binary combination of &lsquo;01000001&rsquo;. Of course each printable character has its own unique binary combination, but there are only a finite number of printable characters (around 150k). But with binary combination, these numbers are capable of going up even higher, reaching millions. These additional binary combinations not used by printable characters will most likely be assigned to a variety of unprintable characters.</p>
 <p>Unprintable characters are of paramount importance in computing. It has now become a foundation of cryptography (the art of encryption/decryption). Unprintable characters are used for different purpose, for example, when we press &lsquo;Enter&rsquo; to go to new line, we are introducing an unprintable character called &ldquo;Carriage Return&rdquo;, normally represented by &lsquo;\r&rsquo; (binary combination &lsquo;00001101&rsquo;). In networking, some unprintable characters are used to signify the start or end of actual transmission.</p>
+</div>
+  </div>
 
+
+  
+  <div class="glossary-term">
+    <h3 id="regex">
+      RegEx
+      <a href="#regex" class="heading-link">
+        <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+        <span class="sr-only">Link to heading</span>
+      </a>
+    </h3>
+    <div><p>Regular Expressions (RegEx) are patterns used to match and manipulate text. They allow you to search for specific sequences of characters, validate input, and extract data. Some basic components include:</p>
+<ul>
+<li>
+<p>Literal Characters: Match exact characters (e.g., a matches &lsquo;a&rsquo;).</p>
+</li>
+<li>
+<p>Metacharacters</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Character</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">.</td>
+<td style="text-align:left">Any character (except newline)</td>
+</tr>
+<tr>
+<td style="text-align:left">\d</td>
+<td style="text-align:left">Any digit</td>
+</tr>
+<tr>
+<td style="text-align:left">\w</td>
+<td style="text-align:left">Any word character (letters, digits, underscore)</td>
+</tr>
+<tr>
+<td style="text-align:left">^</td>
+<td style="text-align:left">Start of a string</td>
+</tr>
+<tr>
+<td style="text-align:left">$</td>
+<td style="text-align:left">End of a string</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Quantifiers:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Quantifier</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">*</td>
+<td style="text-align:left">0 or more times</td>
+</tr>
+<tr>
+<td style="text-align:left">+</td>
+<td style="text-align:left">1 or more times</td>
+</tr>
+<tr>
+<td style="text-align:left">{n}</td>
+<td style="text-align:left">exactly n times</td>
+</tr>
+<tr>
+<td style="text-align:left">?</td>
+<td style="text-align:left">exactly 1 time</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p>Some example usages:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">String</th>
+<th style="text-align:left">RegEx</th>
+<th style="text-align:left">Matches what?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">my cat is eating</td>
+<td style="text-align:left">cat</td>
+<td style="text-align:left">cat</td>
+</tr>
+<tr>
+<td style="text-align:left">phone: 1234</td>
+<td style="text-align:left">\d+</td>
+<td style="text-align:left">1234</td>
+</tr>
+<tr>
+<td style="text-align:left">contact us at <a href="mailto:info@example.com" >info@example.com</a></td>
+<td style="text-align:left">\w+@\w+.\w+</td>
+<td style="text-align:left"><a href="mailto:info@example.com" >info@example.com</a></td>
+</tr>
+<tr>
+<td style="text-align:left">Today is 08/13/2024</td>
+<td style="text-align:left">\d{2}/\d{2}/\d{4}</td>
+<td style="text-align:left">08/13/2024</td>
+</tr>
+</tbody>
+</table>
+</div>
+  </div>
+
+
+  
+  <div class="glossary-term">
+    <h3 id="shell">
+      Shell
+      <a href="#shell" class="heading-link">
+        <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+        <span class="sr-only">Link to heading</span>
+      </a>
+    </h3>
+    <div><p>When you think of &ldquo;shell&rdquo;, think of Terminal or Command Prompt. Actually, those are interrelated. But the difference being</p>
+<ul>
+<li>&ldquo;Terminal / Command Prompt&rdquo; refers to the desktop application itself</li>
+<li>&ldquo;Shell&rdquo; refers to the interface that user can interact with. Itnalso interprets the commands that user type in into something that a computer would understand.</li>
+</ul>
+<p>Shell can come in wide variety. Different shell may require different commands to achieve the same result. It also allows different kind of customisation. While the commands used may be different, they all share one similarities. It allows users to interact directly with the OS using command line feature.</p>
+<p>Some good examples of shells across different OS platforms:</p>
+<ul>
+<li>In Windows, we have the normal Windows Shell, or the more advanced Windows PowerShell. If you want to list out the files in Windows Shell, you would use the command <code>dir</code>.</li>
+<li>In Unix, we have the Bourne Shell &ldquo;sh&rdquo; (the most primitive), the GNU Bourne-Again Shell &ldquo;bash&rdquo; (the most popular), C Shell &ldquo;csh&rdquo;, Korn Shell &ldquo;ksh&rdquo;, Z Shell &ldquo;zsh&rdquo;, etc. If you want to list out the files in bash, you would use the command <code>ls</code>.</li>
+</ul>
+</div>
   </div>
 
 
@@ -236,9 +372,9 @@ Glossary · CyS3cGuy
         <span class="sr-only">Link to heading</span>
       </a>
     </h3>
-    <p>SSH stands for Secure Shell. Think of a physical computer which is online but you do not have access to the computer physically (We call that a <em>remote computer</em>). SSH provides a secure way to connect to that remote computer via a Terminal / Command prompt and interacting with the shell interface rather than the usual GUI-based interface.</p>
+    <div><p>SSH stands for Secure Shell. Think of a physical computer which is online but you do not have access to the computer physically (We call that a <em>remote computer</em>). SSH provides a secure way to connect to that remote computer via a Terminal / Command prompt and interacting with the shell interface rather than the usual GUI-based interface.</p>
 <p>The default port number for SSH is 22. However, custom port numbers can be setup to facilitate SSH connection.</p>
-
+</div>
   </div>
 
 
@@ -251,8 +387,20 @@ Glossary · CyS3cGuy
         <span class="sr-only">Link to heading</span>
       </a>
     </h3>
-    <p>Think of Terminal / Command Prompt as the <em>black interface</em> that allow users to input command and interact with the Operating System. Using Terminal / Command Prompt allows the users to interact with computer via shell interface. Most users are not accustomed in using the shell interface provided via Terminal / Command Prompt due to our daily lives are so deeply intertwined with the GUI-based Windows OS, i.e. mouse click, double mouse click, up/down/left/right arrow key, drag &amp; drop, moving mouse cursor. However, in the IT world, Terminal / Command Prompt provides a more powerful feature for interaction compared to GUI-based interface (provided one has good to expert familiarity with it).</p>
+    <div>Think of Terminal / Command Prompt as the <em>black interface</em> that allow users to input command and interact with the Operating System. Using Terminal / Command Prompt allows the users to interact with computer via shell interface. Most users are not accustomed in using the shell interface provided via Terminal / Command Prompt due to our daily lives are so deeply intertwined with the GUI-based Windows OS, i.e. mouse click, double mouse click, up/down/left/right arrow key, drag &amp; drop, moving mouse cursor. However, in the IT world, Terminal / Command Prompt provides a more powerful feature for interaction compared to GUI-based interface (provided one has good to expert familiarity with it).</div>
+  </div>
 
+
+  
+  <div class="glossary-term">
+    <h3 id="webshell">
+      Webshell
+      <a href="#webshell" class="heading-link">
+        <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+        <span class="sr-only">Link to heading</span>
+      </a>
+    </h3>
+    <div>It is a shell, but you access the shell via a website instead of typical Terminal / Command Prompt desktop application. An example of webshell would be Azure Cloud Shell.</div>
   </div>
 
 
